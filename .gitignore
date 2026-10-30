@@ -81,3 +81,6 @@ Thumbs.db
 
 # Removed feature code
 /ml/health_risk/
+
+/ml/data/Sleep_health_and_lifestyle_dataset.csv
+/ml/data/Student_Stress_Level_Dataset.csv
