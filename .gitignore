@@ -1,0 +1,83 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+backend/venv/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Root dependencies and generated audit file
+/node_modules/
+/mood_audit.txt
+
+# Unexpected empty files in project root
+/[0-9]*
+/'
+/(
+/0)
+/50)
+/70)
+/75)
+/85)
+/cd
+/findstr
+/python
+/where
+/{
+
+# Backend generated files and local data
+/backend/venv/
+/backend/__pycache__/
+/backend/**/*.pyc
+/backend/*.db
+/backend/app_backup.py
+/backend/eda_stress.py
+/backend/installed_packages.txt
+
+# Unexpected files created during terminal commands
+/backend/cd
+/backend/dir
+/frontend/1
+/frontend/150
+/frontend/80)
+/frontend/cd
+/frontend/findstr
+/frontend/powershell
+/frontend/type
+/frontend/{
+
+# Old backup models
+/ml/models_backup_before_emotion_fix/
+
+# Frontend backup files
+/frontend/src/Dashboard_backup.jsx
+/frontend/src/pages/WeeklyWellnessReport.backup.jsx
+
+# Generated EDA outputs
+/ml/eda_output/
+
+# Local editor settings
+/.vscode/
+
+# Removed feature code
+/ml/health_risk/

@@ -1,0 +1,6046 @@
+* {
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   PAGE
+============================================================ */
+
+.analytics-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 8% 5%,
+      rgba(117, 225, 190, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 92% 12%,
+      rgba(139, 108, 246, 0.10),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 50% 90%,
+      rgba(76, 190, 230, 0.07),
+      transparent 28%
+    ),
+    #f6faf9;
+
+  color: #18382f;
+}
+
+.analytics-main {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 38px 42px 60px;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.analytics-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 25px;
+}
+
+.analytics-eyebrow {
+  margin: 0 0 7px;
+
+  color: #00a878;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.analytics-header h1 {
+  margin: 0;
+
+  color: #17372f;
+
+  font-size: 31px;
+
+  line-height: 1.2;
+}
+
+.analytics-subtitle {
+  max-width: 680px;
+
+  margin: 10px 0 0;
+
+  color: #789089;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.analytics-header-badge {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 11px 15px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.92
+  );
+
+  border: 1px solid #dfece7;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 8px 28px
+      rgba(38, 79, 68, 0.06);
+
+  backdrop-filter: blur(10px);
+}
+
+.analytics-header-badge > span {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e7f8f2,
+      #d8f4ea
+    );
+
+  border-radius: 9px;
+
+  color: #00a878;
+}
+
+.analytics-header-badge strong {
+  display: block;
+
+  color: #284b41;
+
+  font-size: 10px;
+}
+
+.analytics-header-badge small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #91a19c;
+
+  font-size: 8px;
+}
+
+/* ============================================================
+   TOOLBAR
+============================================================ */
+
+.analytics-toolbar {
+  margin-top: 28px;
+
+  padding: 16px 18px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.96
+  );
+
+  border: 1px solid #e2ece8;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  box-shadow:
+    0 8px 28px
+      rgba(38, 79, 68, 0.045);
+}
+
+.analytics-toolbar-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #8a9b96;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.analytics-periods {
+  display: flex;
+
+  gap: 6px;
+}
+
+.analytics-period {
+  border: 1px solid #dfeae6;
+
+  background: #f8fbfa;
+
+  color: #71857f;
+
+  padding: 8px 13px;
+
+  border-radius: 9px;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.analytics-period:hover {
+  transform: translateY(-1px);
+
+  border-color: #b9d9ce;
+}
+
+.analytics-period.active {
+  background:
+    linear-gradient(
+      135deg,
+      #00a878,
+      #16bd8c
+    );
+
+  border-color: #00a878;
+
+  color: white;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 6px 18px
+      rgba(0, 168, 120, 0.20);
+}
+
+.analytics-refresh {
+  border: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eaf7f3,
+      #e1f5ef
+    );
+
+  color: #008f6c;
+
+  padding: 10px 14px;
+
+  border-radius: 9px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.analytics-refresh:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 18px
+      rgba(0, 168, 120, 0.12);
+}
+
+/* ============================================================
+   SUMMARY
+============================================================ */
+
+.analytics-summary {
+  margin-top: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 12px;
+}
+
+.analytics-summary-card {
+  min-height: 85px;
+
+  padding: 15px;
+
+  border: 1px solid #e3ece9;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  box-shadow:
+    0 7px 22px
+      rgba(38, 79, 68, 0.045);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.analytics-summary-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 13px 30px
+      rgba(38, 79, 68, 0.09);
+}
+
+.analytics-summary-card > span {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 11px;
+
+  font-size: 18px;
+}
+
+.analytics-summary-card small {
+  display: block;
+
+  color: #899a95;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+.analytics-summary-card strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #294b41;
+
+  font-size: 14px;
+}
+
+.inline-unit {
+  display: inline !important;
+
+  margin-left: 3px;
+
+  font-size: 8px !important;
+
+  font-weight: 500 !important;
+}
+
+.mood-summary {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f5f0ff
+    );
+}
+
+.mood-summary > span {
+  background: #eee7ff;
+}
+
+.stress-summary {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #fff1f2
+    );
+}
+
+.stress-summary > span {
+  background: #ffe5e8;
+}
+
+.sleep-summary {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #eef5ff
+    );
+}
+
+.sleep-summary > span {
+  background: #e3eeff;
+}
+
+.nutrition-summary {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #fff5e9
+    );
+}
+
+.nutrition-summary > span {
+  background: #ffecd9;
+}
+
+.hydration-summary {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #edfaff
+    );
+}
+
+.hydration-summary > span {
+  background: #dcf5fd;
+}
+
+/* ============================================================
+   COVERAGE
+============================================================ */
+
+.analytics-coverage {
+  margin-top: 18px;
+
+  padding: 22px 24px;
+
+  border: 1px solid #d9eee6;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eaf8f3,
+      #ffffff
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  box-shadow:
+    0 8px 26px
+      rgba(38, 79, 68, 0.04);
+}
+
+.analytics-coverage h2 {
+  margin: 0;
+
+  color: #23473d;
+
+  font-size: 17px;
+}
+
+.analytics-coverage
+  > div:first-child
+  > p:last-child {
+  margin: 6px 0 0;
+
+  color: #789089;
+
+  font-size: 10px;
+}
+
+.coverage-progress-area {
+  min-width: 260px;
+}
+
+.coverage-progress-area > strong {
+  display: block;
+
+  text-align: right;
+
+  color: #008f6c;
+
+  font-size: 18px;
+
+  margin-bottom: 7px;
+}
+
+.coverage-progress {
+  width: 100%;
+
+  height: 8px;
+
+  background: #dcece6;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.coverage-progress div {
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00a878,
+      #52d2a7
+    );
+
+  border-radius: inherit;
+
+  transition: width 0.5s ease;
+}
+
+/* ============================================================
+   SECTION
+============================================================ */
+
+.analytics-section {
+  margin-top: 38px;
+}
+
+.analytics-section-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  gap: 20px;
+
+  margin-bottom: 15px;
+}
+
+.analytics-section-heading h2 {
+  margin: 0;
+
+  color: #203f36;
+
+  font-size: 20px;
+}
+
+.analytics-section-heading
+  p:last-child {
+  margin: 5px 0 0;
+
+  color: #81948e;
+
+  font-size: 10px;
+}
+
+.analytics-count,
+.analytics-target {
+  padding: 7px 10px;
+
+  border-radius: 8px;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+/* ============================================================
+   DIFFERENT SECTION COLOURS
+============================================================ */
+
+.mood-eyebrow {
+  color: #8b6cf6;
+}
+
+.mood-count {
+  background: #f0ebff;
+
+  color: #7859e4;
+}
+
+.stress-eyebrow {
+  color: #e15b68;
+}
+
+.sleep-eyebrow {
+  color: #4e80db;
+}
+
+.sleep-target {
+  background: #edf3ff;
+
+  color: #4f7fd8;
+}
+
+.nutrition-eyebrow {
+  color: #e99554;
+}
+
+.nutrition-count {
+  background: #fff1e4;
+
+  color: #dc8746;
+}
+
+.hydration-eyebrow {
+  color: #329bc5;
+}
+
+.hydration-target {
+  background: #eaf8fd;
+
+  color: #3096bd;
+}
+
+/* ============================================================
+   GENERAL CHART CARD
+============================================================ */
+
+.analytics-chart-card {
+  min-height: 350px;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  border: 1px solid #e1ebe8;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 9px 30px
+      rgba(38, 79, 68, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.analytics-chart-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 38px
+      rgba(38, 79, 68, 0.08);
+}
+
+/* ============================================================
+   MOOD CARD
+============================================================ */
+
+.mood-chart-card {
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(139,108,246,0.10),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f8f4ff
+    );
+
+  border-color: #e5ddf7;
+}
+
+/* ============================================================
+   SLEEP CARD
+============================================================ */
+
+.sleep-chart-card {
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(91,141,239,0.10),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f2f7ff
+    );
+
+  border-color: #dce8fa;
+}
+
+/* ============================================================
+   NUTRITION CARD
+============================================================ */
+
+.nutrition-chart {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #fff9f4
+    );
+
+  border-color: #f0e2d7;
+}
+
+/* ============================================================
+   EMPTY
+============================================================ */
+
+.analytics-empty-chart {
+  min-height: 310px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.analytics-empty-chart > span {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #eef8f5;
+
+  border-radius: 15px;
+
+  font-size: 25px;
+}
+
+.analytics-empty-chart h3 {
+  margin: 12px 0 5px;
+
+  color: #315248;
+
+  font-size: 14px;
+}
+
+.analytics-empty-chart p {
+  max-width: 400px;
+
+  margin: 0;
+
+  color: #899a95;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+.analytics-empty-chart button {
+  margin-top: 13px;
+
+  border: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00a878,
+      #17bb8b
+    );
+
+  color: white;
+
+  padding: 9px 14px;
+
+  border-radius: 9px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.analytics-empty-chart button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px
+      rgba(0, 168, 120, 0.20);
+}
+
+.mood-empty > span {
+  background: #eee7ff;
+}
+
+/* ============================================================
+   STRESS RADIAL — COMPACT PREMIUM LAYOUT
+============================================================ */
+
+.stress-radial-card {
+  width: 100%;
+  min-height: 270px;
+  padding: 18px 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fff8f8 100%
+    );
+
+  border: 1px solid #f0dede;
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 35px;
+
+  box-shadow:
+    0 8px 28px
+      rgba(130, 70, 70, 0.045);
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   LEFT — STRESS CIRCLE
+========================= */
+
+.stress-radial-chart {
+  width: 250px;
+  height: 250px;
+
+  position: relative;
+  flex: 0 0 250px;
+}
+
+
+/* CENTER TEXT */
+
+.stress-radial-center {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  pointer-events: none;
+
+  text-align: center;
+}
+
+.stress-radial-center strong {
+  color: #d94f5b;
+
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.stress-radial-center span {
+  margin-top: 5px;
+
+  color: #9d8b8b;
+
+  font-size: 10px;
+}
+
+.stress-radial-center small {
+  margin-top: 6px;
+
+  color: #a66b6b;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================
+   RIGHT — STRESS DETAILS
+========================= */
+
+.stress-radial-info {
+  min-width: 0;
+  width: 245px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  justify-content: center;
+}
+
+
+/* BRAIN ICON */
+
+.stress-radial-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff0f0;
+
+  border-radius: 11px;
+
+  font-size: 18px;
+
+  margin-bottom: 10px;
+}
+
+
+/* LABEL */
+
+.stress-radial-info > p {
+  margin: 0 0 4px;
+
+  color: #9a8b8b;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* HIGH / MODERATE / LOW */
+
+.stress-radial-info h3 {
+  margin: 0;
+
+  color: #533737;
+
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+
+/* PREDICTION */
+
+.stress-radial-info > span:last-of-type {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #9a8989;
+
+  font-size: 9px;
+}
+
+
+/* RETAKE BUTTON */
+
+.stress-radial-info button {
+  margin-top: 12px;
+
+  border: 0;
+
+  background: #ed6470;
+
+  color: white;
+
+  padding: 9px 18px;
+
+  border-radius: 9px;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stress-radial-info button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px
+      rgba(217, 92, 102, 0.18);
+}
+
+/* ============================================================
+   SLEEP STAT STRIP
+============================================================ */
+
+.analytics-stat-strip {
+  margin-top: 12px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+}
+
+.analytics-stat-strip div {
+  padding: 14px;
+
+  background: white;
+
+  border: 1px solid #e3ece9;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 5px 18px
+      rgba(38,79,68,0.03);
+}
+
+.sleep-stat-strip div {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f5f8ff
+    );
+
+  border-color: #dfe8f7;
+}
+
+.analytics-stat-strip span {
+  display: block;
+
+  color: #8b9b96;
+
+  font-size: 7px;
+
+  font-weight: 800;
+}
+
+.analytics-stat-strip strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #315248;
+
+  font-size: 14px;
+}
+
+/* ============================================================
+   NUTRITION MINI CARDS
+============================================================ */
+
+.nutrition-mini-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+}
+
+.nutrition-mini-grid > div {
+  padding: 16px;
+
+  border-radius: 14px;
+
+  border: 1px solid #e3ece9;
+
+  box-shadow:
+    0 5px 18px
+      rgba(38,79,68,0.03);
+
+  transition:
+    transform 0.2s ease;
+}
+
+.nutrition-mini-grid > div:hover {
+  transform:
+    translateY(-3px);
+}
+
+.nutrition-mini-grid span {
+  font-size: 18px;
+}
+
+.nutrition-mini-grid small {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #8a9b96;
+
+  font-size: 7px;
+
+  font-weight: 800;
+}
+
+.nutrition-mini-grid strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #315248;
+
+  font-size: 16px;
+}
+
+.nutrition-mini-calories {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #fff3e7
+    ) !important;
+}
+
+.nutrition-mini-protein {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f4efff
+    ) !important;
+}
+
+.nutrition-mini-fiber {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #effaf4
+    ) !important;
+}
+
+/* ============================================================
+   HYDRATION
+============================================================ */
+
+.hydration-chart-card {
+  min-height: 330px;
+
+  padding: 20px 30px;
+
+  background:
+    radial-gradient(
+      circle at 12% 30%,
+      rgba(66,184,232,0.10),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f3fbfe
+    );
+
+  border: 1px solid #dcecf1;
+
+  border-radius: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 50px;
+
+  box-shadow:
+    0 9px 30px
+      rgba(50,120,145,0.05);
+}
+
+.hydration-donut {
+  width: 310px;
+
+  height: 270px;
+
+  position: relative;
+}
+
+.hydration-donut-center {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  pointer-events: none;
+}
+
+.hydration-donut-center strong {
+  color: #319bc6;
+
+  font-size: 35px;
+
+  line-height: 1;
+}
+
+.hydration-donut-center span {
+  margin-top: 7px;
+
+  color: #8aa6b1;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.hydration-chart-info {
+  min-width: 280px;
+}
+
+.hydration-big-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dcf5fd,
+      #eafaff
+    );
+
+  border-radius: 15px;
+
+  font-size: 24px;
+}
+
+.hydration-chart-info > p {
+  margin: 15px 0 4px;
+
+  color: #8ba1a9;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.hydration-chart-info h3 {
+  margin: 0;
+
+  color: #315463;
+
+  font-size: 27px;
+}
+
+.hydration-chart-info h3 small {
+  margin-left: 4px;
+
+  color: #8ba1a9;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+.hydration-mini-progress {
+  width: 100%;
+
+  max-width: 310px;
+
+  height: 8px;
+
+  margin-top: 12px;
+
+  background: #e2f0f4;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.hydration-mini-progress div {
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #42b8e8,
+      #73d2ef
+    );
+
+  border-radius: inherit;
+
+  transition:
+    width 0.5s ease;
+}
+
+.hydration-status {
+  display: block;
+
+  max-width: 320px;
+
+  margin-top: 10px;
+
+  color: #7c969f;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+.hydration-chart-info button {
+  margin-top: 16px;
+
+  border: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3ca7d2,
+      #5fc3e6
+    );
+
+  color: white;
+
+  padding: 10px 15px;
+
+  border-radius: 9px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.hydration-chart-info button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px
+      rgba(60,167,210,0.20);
+}
+
+/* ============================================================
+   TRENDS
+============================================================ */
+
+.trend-stat-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 12px;
+}
+
+.trend-stat-card {
+  padding: 17px;
+
+  background: white;
+
+  border: 1px solid #e3ece9;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.trend-stat-card:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 11px 27px
+      rgba(38,79,68,0.07);
+}
+
+.trend-stat-card > span {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 11px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+.mood-trend > span {
+  background: #eee7ff;
+}
+
+.sleep-trend > span {
+  background: #e5efff;
+}
+
+.nutrition-trend > span {
+  background: #fff0df;
+}
+
+.coverage-trend > span {
+  background: #e1f6ef;
+}
+
+.trend-stat-card small {
+  display: block;
+
+  color: #8a9b96;
+
+  font-size: 7px;
+
+  font-weight: 800;
+}
+
+.trend-stat-card strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #315248;
+
+  font-size: 16px;
+}
+
+.trend-stat-card p {
+  margin: 2px 0 0;
+
+  color: #9aa9a5;
+
+  font-size: 8px;
+}
+
+/* ============================================================
+   DISCLAIMER
+============================================================ */
+
+.analytics-disclaimer {
+  margin-top: 35px;
+
+  padding: 13px 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf4,
+      #fffaf0
+    );
+
+  border: 1px solid #f0dc9d;
+
+  border-radius: 11px;
+
+  display: flex;
+
+  gap: 10px;
+
+  color: #795f20;
+}
+
+.analytics-disclaimer > span {
+  font-size: 13px;
+}
+
+.analytics-disclaimer p {
+  margin: 0;
+
+  font-size: 9px;
+
+  line-height: 1.6;
+}
+
+/* ============================================================
+   BACK
+============================================================ */
+
+
+.analytics-back {
+  display: flex;
+  justify-content: center;
+  margin-top: 27px;
+  padding-bottom: 10px;
+}
+
+.analytics-back button {
+  padding: 12px 20px;
+  border: 1px solid #cbded2;
+  border-radius: 13px;
+  background: #294b3b;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.analytics-back button:hover {
+  background: #355c49;
+  box-shadow: 0 5px 14px rgba(41, 75, 59, 0.16);
+  transform: translateY(-1px);
+}
+
+.analytics-back button:focus-visible {
+  outline: 2px solid #789b85;
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1050px) {
+
+  .analytics-summary {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .trend-stat-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 850px) {
+
+  .stress-radial-card,
+  .hydration-chart-card {
+    gap: 20px;
+  }
+
+  .stress-radial-chart,
+  .hydration-donut {
+    width: 270px;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .analytics-main {
+    padding:
+      25px
+      18px
+      45px;
+  }
+
+  .analytics-header {
+    flex-direction: column;
+  }
+
+  .analytics-toolbar {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .analytics-summary {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .analytics-coverage {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .coverage-progress-area {
+    width: 100%;
+  }
+
+  .stress-radial-card,
+  .hydration-chart-card {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .stress-radial-info,
+  .hydration-chart-info {
+    min-width: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-direction: column;
+  }
+
+  .hydration-mini-progress {
+    width: 80%;
+  }
+
+}
+
+@media (max-width: 560px) {
+
+  .analytics-header h1 {
+    font-size: 24px;
+  }
+
+  .analytics-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .nutrition-mini-grid,
+  .analytics-stat-strip,
+  .trend-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-section-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .analytics-periods {
+    flex-wrap: wrap;
+  }
+
+  .analytics-toolbar {
+    width: 100%;
+  }
+
+  .analytics-chart-card {
+    padding: 10px;
+  }
+
+  .stress-radial-chart,
+  .hydration-donut {
+    width: 250px;
+
+    max-width: 100%;
+  }
+
+  .stress-radial-card,
+  .hydration-chart-card {
+    padding: 15px;
+  }
+
+  .analytics-header-badge {
+    width: 100%;
+  }
+
+}
+/* ============================================================
+   SCREENSHOT STYLE — SLEEP ANALYTICS
+============================================================ */
+
+.sleep-progress-card {
+  background: #ffffff;
+  border: 1px solid #dce5ef;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 25px rgba(40, 70, 100, 0.05);
+}
+
+.sleep-progress-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 17px;
+}
+
+.sleep-progress-title span {
+  color: #5c6ff1;
+  font-size: 15px;
+}
+
+.sleep-progress-title strong {
+  color: #203b72;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.sleep-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.sleep-progress-row {
+  width: 100%;
+}
+
+.sleep-progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.sleep-progress-meta > span {
+  color: #5373a8;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.sleep-progress-meta strong {
+  color: #31507d;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.sleep-progress-meta em {
+  margin-left: 4px;
+  color: #8292a7;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.sleep-progress-track {
+  width: 100%;
+  height: 9px;
+  background: #edf1f6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sleep-progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.sleep-bar-good {
+  background: linear-gradient(
+    90deg,
+    #367ff1,
+    #4d8df5
+  );
+}
+
+.sleep-bar-fair {
+  background: linear-gradient(
+    90deg,
+    #ffb300,
+    #ffb91c
+  );
+}
+
+/* ============================================================
+   MACRONUTRIENT ENERGY DISTRIBUTION
+============================================================ */
+
+.macro-section {
+  margin-top: 18px;
+  background: #ffffff;
+  border: 1px solid #e0e7ed;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 25px rgba(40, 70, 100, 0.045);
+}
+
+.macro-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.macro-title span {
+  color: #ef8d36;
+  font-size: 15px;
+}
+
+.macro-title strong {
+  color: #203b72;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.macro-content {
+  background: linear-gradient(
+    135deg,
+    #fafcfd,
+    #f5f8fb
+  );
+
+  border: 1px solid #edf1f5;
+
+  border-radius: 12px;
+
+  padding: 12px;
+}
+
+/* ============================================================
+   MACRO STACKED BAR
+============================================================ */
+
+.macro-ratio-bar {
+  height: 21px;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #e8edf2;
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.macro-ratio-bar > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 800;
+  transition: width 0.5s ease;
+}
+
+.macro-carb {
+  background: #f59e32;
+}
+
+.macro-protein {
+  background: #14b889;
+}
+
+.macro-fat {
+  background: #625df1;
+}
+
+/* ============================================================
+   MACRO CARDS
+============================================================ */
+
+.macro-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.macro-card {
+  background: #ffffff;
+  border: 1px solid #dce5ef;
+  border-radius: 9px;
+  padding: 11px;
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.macro-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px rgba(40, 70, 100, 0.07);
+}
+
+.macro-card-title {
+  display: block;
+  color: #e67f27;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.macro-card-title.protein {
+  color: #0ba77d;
+}
+
+.macro-card-title.fats {
+  color: #5652df;
+}
+
+.macro-card strong {
+  display: block;
+  margin-top: 4px;
+  color: #24446f;
+  font-size: 10px;
+}
+
+.macro-card small {
+  display: block;
+  margin-top: 3px;
+  color: #8b9baa;
+  font-size: 7px;
+}
+
+.macro-empty {
+  padding: 35px;
+  text-align: center;
+  color: #8795a5;
+  font-size: 10px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 650px) {
+
+  .macro-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .sleep-progress-meta {
+    gap: 10px;
+  }
+
+  .sleep-progress-meta strong {
+    text-align: right;
+  }
+
+}
+/* ============================================================
+   MINDNUTRI WELLNESS ANALYTICS
+   STEP 1 — PREMIUM RESPONSIVE GRID LAYOUT
+   ============================================================ */
+
+/* Main analytics content */
+.analytics-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+/* ============================================================
+   FULL-WIDTH ELEMENTS
+   ============================================================ */
+
+.analytics-header,
+.analytics-toolbar,
+.analytics-summary,
+.analytics-coverage,
+.analytics-disclaimer,
+.analytics-back {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+   ANALYTICS SECTIONS
+   ============================================================ */
+
+.analytics-section {
+  min-width: 0;
+  width: 100%;
+}
+
+/* ============================================================
+   MOOD
+   LEFT COLUMN
+   ============================================================ */
+
+.analytics-section:has(.mood-chart-card) {
+  grid-column: 1;
+}
+
+/* ============================================================
+   STRESS
+   RIGHT COLUMN
+   ============================================================ */
+
+.analytics-section:has(.stress-radial-card) {
+  grid-column: 2;
+}
+
+/* ============================================================
+   SLEEP
+   FULL WIDTH
+   ============================================================ */
+
+.analytics-section:has(.sleep-progress-card) {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+   NUTRITION
+   FULL WIDTH FOR NOW
+   ============================================================ */
+
+.analytics-section:has(.nutrition-chart) {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+   HYDRATION
+   LEFT COLUMN
+   ============================================================ */
+
+.analytics-section:has(.hydration-chart-card) {
+  grid-column: 1;
+}
+
+/* ============================================================
+   TRENDS
+   RIGHT COLUMN
+   ============================================================ */
+
+.analytics-section:has(.trend-stat-grid) {
+  grid-column: 2;
+}
+
+/* ============================================================
+   CHART CARDS
+   ============================================================ */
+
+.analytics-chart-card,
+.stress-radial-card,
+.sleep-progress-card,
+.hydration-chart-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevent charts from overflowing their cards */
+.analytics-chart-card > *,
+.stress-radial-card > *,
+.sleep-progress-card > *,
+.hydration-chart-card > * {
+  max-width: 100%;
+}
+
+/* ============================================================
+   SUMMARY CARDS
+   ============================================================ */
+
+.analytics-summary {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.analytics-summary-card {
+  min-width: 0;
+}
+
+/* ============================================================
+   NUTRITION MINI CARDS
+   ============================================================ */
+
+.nutrition-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* ============================================================
+   MACRONUTRIENT CARDS
+   ============================================================ */
+
+.macro-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* ============================================================
+   TREND STAT CARDS
+   ============================================================ */
+
+.trend-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET
+   ============================================================ */
+
+@media (max-width: 1000px) {
+  .analytics-main {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .analytics-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .analytics-section:has(.sleep-progress-card),
+  .analytics-section:has(.nutrition-chart) {
+    grid-column: 1 / -1;
+  }
+
+  .nutrition-mini-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .analytics-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .analytics-header,
+  .analytics-toolbar,
+  .analytics-summary,
+  .analytics-coverage,
+  .analytics-section,
+  .analytics-disclaimer,
+  .analytics-back {
+    grid-column: 1;
+  }
+
+  .analytics-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nutrition-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .macro-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .trend-stat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   VERY SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .analytics-summary {
+    grid-template-columns: 1fr;
+  }
+}
+/* ============================================================
+   STEP 2 — NUTRITION + MACRONUTRIENT TWO-COLUMN LAYOUT
+   ============================================================ */
+
+.nutrition-macro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 22px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* Left Nutrition card */
+.nutrition-analytics-panel {
+  min-width: 0;
+  width: 100%;
+  padding: 22px;
+  border: 1px solid #f3dfb9;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    #fffdf8 0%,
+    #fffaf2 100%
+  );
+  box-sizing: border-box;
+}
+
+/* Keep nutrition mini cards inside the left panel */
+.nutrition-analytics-panel .nutrition-mini-grid {
+  margin-bottom: 16px;
+}
+
+/* Nutrition graph */
+.nutrition-analytics-panel .nutrition-chart {
+  width: 100%;
+  margin: 0;
+}
+
+/* Right Macronutrient card */
+.nutrition-macro-grid .macro-section {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Make the macro content fit the smaller right card */
+.nutrition-macro-grid .macro-content {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Macro cards stack nicely in the narrower column */
+.nutrition-macro-grid .macro-cards {
+  grid-template-columns: 1fr;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .nutrition-macro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nutrition-macro-grid .macro-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .nutrition-macro-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .nutrition-analytics-panel {
+    padding: 16px;
+  }
+
+  .nutrition-macro-grid .macro-cards {
+    grid-template-columns: 1fr;
+  }
+}
+/* ============================================================
+   STEP 3 — MOOD + STRESS + SLEEP THREE CARD LAYOUT
+   ============================================================ */
+
+.analytics-main {
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+  gap: 20px;
+}
+
+/* Mood — first column */
+.analytics-section:has(.mood-chart-card) {
+  grid-column: 1;
+}
+
+/* Stress — second column */
+.analytics-section:has(.stress-radial-card) {
+  grid-column: 2;
+}
+
+/* Sleep — third column */
+.analytics-section:has(.sleep-progress-card) {
+  grid-column: 3;
+}
+
+/* Make the three cards visually equal */
+.analytics-section:has(.mood-chart-card),
+.analytics-section:has(.stress-radial-card),
+.analytics-section:has(.sleep-progress-card) {
+  min-width: 0;
+}
+
+/* Smaller charts for compact 3-column layout */
+.mood-chart-card {
+  min-height: 280px;
+}
+
+.mood-chart-card .recharts-responsive-container {
+  max-height: 280px;
+}
+
+.stress-radial-card {
+  min-height: 280px;
+}
+
+.sleep-progress-card {
+  min-height: 280px;
+}
+
+/* ============================================================
+   SLEEP GAUGE
+   ============================================================ */
+
+.sleep-gauge-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid #dcd9ff;
+  background: linear-gradient(
+    135deg,
+    #fbfaff 0%,
+    #f5f4ff 100%
+  );
+  box-sizing: border-box;
+}
+
+.sleep-gauge-visual {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  flex-shrink: 0;
+}
+
+.sleep-gauge-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.sleep-gauge-center strong {
+  font-size: 30px;
+  line-height: 1;
+  color: #554bd4;
+  font-weight: 700;
+}
+
+.sleep-gauge-center span {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #8a84a5;
+}
+
+.sleep-gauge-center small {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #706a91;
+  font-weight: 600;
+}
+
+/* Sleep information beside gauge */
+.sleep-gauge-info {
+  flex: 1;
+  min-width: 0;
+  padding-left: 14px;
+}
+
+.sleep-gauge-info-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #e7e3f5;
+}
+
+.sleep-gauge-info-item:last-child {
+  border-bottom: none;
+}
+
+.sleep-gauge-info-item span {
+  display: block;
+  font-size: 10px;
+  color: #8a84a5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.sleep-gauge-info-item strong {
+  font-size: 16px;
+  color: #443c70;
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  .analytics-main {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+  }
+
+  .analytics-section:has(.mood-chart-card) {
+    grid-column: 1;
+  }
+
+  .analytics-section:has(.stress-radial-card) {
+    grid-column: 2;
+  }
+
+  .analytics-section:has(.sleep-progress-card) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .analytics-main {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-section:has(.mood-chart-card),
+  .analytics-section:has(.stress-radial-card),
+  .analytics-section:has(.sleep-progress-card) {
+    grid-column: 1;
+  }
+
+  .sleep-gauge-card {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sleep-gauge-info {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+/* ============================================================
+   MINDNUTRI — STEP 3 FINAL
+   MOOD + STRESS + SLEEP
+   REFERENCE SCREENSHOT STYLE
+   ============================================================ */
+
+.analytics-main {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ------------------------------------------------------------
+   THREE TOP ANALYTICS SECTIONS
+   ------------------------------------------------------------ */
+
+.analytics-section:has(.mood-chart-card) {
+  grid-column: 1;
+}
+
+.analytics-section:has(.stress-radial-card) {
+  grid-column: 2;
+}
+
+.analytics-section:has(.sleep-progress-card) {
+  grid-column: 3;
+}
+
+/* ------------------------------------------------------------
+   REMOVE LARGE OUTER HEADING SPACING
+   ------------------------------------------------------------ */
+
+.analytics-section:has(.mood-chart-card) .analytics-section-heading,
+.analytics-section:has(.stress-radial-card) .analytics-section-heading,
+.analytics-section:has(.sleep-progress-card) .analytics-section-heading {
+  margin-bottom: 12px;
+}
+
+/* ------------------------------------------------------------
+   MOOD CARD
+   ------------------------------------------------------------ */
+
+.mood-chart-card {
+  min-height: 255px;
+  height: 255px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.mood-chart-card .recharts-responsive-container {
+  height: 205px !important;
+}
+
+/* ------------------------------------------------------------
+   STRESS CARD
+   ------------------------------------------------------------ */
+
+.stress-radial-card {
+  min-height: 285px;
+  height: 285px;
+  padding: 12px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.stress-radial-chart {
+  width: 50%;
+  height: 235px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.stress-radial-chart .recharts-responsive-container {
+  width: 100% !important;
+  height: 235px !important;
+}
+
+.stress-radial-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.stress-radial-center strong {
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.stress-radial-center span {
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+.stress-radial-center small {
+  font-size: 10px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.stress-radial-info {
+  width: 45%;
+  min-width: 0;
+  padding: 4px;
+}
+
+.stress-radial-info .stress-radial-icon {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 100, 120, 0.10);
+  font-size: 16px;
+}
+
+.stress-radial-info p {
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  margin: 7px 0 3px;
+}
+
+.stress-radial-info h3 {
+  font-size: 15px;
+  margin: 0 0 3px;
+}
+
+.stress-radial-info > span:last-of-type {
+  font-size: 9px;
+}
+
+.stress-radial-info button {
+  margin-top: 8px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 7px;
+  font-size: 9px;
+}
+
+/* ------------------------------------------------------------
+   SLEEP CARD
+   ------------------------------------------------------------ */
+
+.sleep-progress-card {
+  min-height: 255px;
+  height: 255px;
+  padding: 14px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Sleep heading inside the card */
+.sleep-progress-title {
+  display: none;
+}
+
+/* Circular sleep visual */
+.sleep-gauge-card {
+  width: 100%;
+  min-height: 225px;
+  height: 225px;
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.sleep-gauge-visual {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+.sleep-gauge-center strong {
+  font-size: 25px;
+}
+
+.sleep-gauge-center span {
+  font-size: 10px;
+}
+
+.sleep-gauge-center small {
+  font-size: 10px;
+}
+
+.sleep-gauge-info {
+  padding-left: 6px;
+  width: 105px;
+  flex-shrink: 0;
+}
+
+.sleep-gauge-info-item {
+  padding: 7px 0;
+}
+
+.sleep-gauge-info-item span {
+  font-size: 8px;
+}
+
+.sleep-gauge-info-item strong {
+  font-size: 13px;
+}
+
+/* ------------------------------------------------------------
+   EYEBROWS / HEADINGS
+   ------------------------------------------------------------ */
+
+.analytics-section:has(.mood-chart-card) .analytics-eyebrow,
+.analytics-section:has(.stress-radial-card) .analytics-eyebrow,
+.analytics-section:has(.sleep-progress-card) .analytics-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.10em;
+  margin-bottom: 4px;
+}
+
+.analytics-section:has(.mood-chart-card) h2,
+.analytics-section:has(.stress-radial-card) h2,
+.analytics-section:has(.sleep-progress-card) h2 {
+  font-size: 16px;
+  margin: 0 0 3px;
+}
+
+.analytics-section:has(.mood-chart-card) .analytics-section-heading p,
+.analytics-section:has(.stress-radial-card) .analytics-section-heading p,
+.analytics-section:has(.sleep-progress-card) .analytics-section-heading p {
+  font-size: 9px;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------
+   DESKTOP WIDTH CONTROL
+   ------------------------------------------------------------ */
+
+@media (min-width: 1200px) {
+  .analytics-main {
+    grid-template-columns:
+      minmax(280px, 1.15fr)
+      minmax(250px, 1fr)
+      minmax(300px, 1.1fr);
+  }
+}
+
+/* ------------------------------------------------------------
+   TABLET
+   ------------------------------------------------------------ */
+
+@media (max-width: 1100px) {
+  .analytics-main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .analytics-section:has(.mood-chart-card) {
+    grid-column: 1;
+  }
+
+  .analytics-section:has(.stress-radial-card) {
+    grid-column: 2;
+  }
+
+  .analytics-section:has(.sleep-progress-card) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ------------------------------------------------------------
+   MOBILE
+   ------------------------------------------------------------ */
+
+@media (max-width: 700px) {
+  .analytics-main {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-section:has(.mood-chart-card),
+  .analytics-section:has(.stress-radial-card),
+  .analytics-section:has(.sleep-progress-card) {
+    grid-column: 1;
+  }
+
+  .mood-chart-card,
+  .stress-radial-card,
+  .sleep-progress-card {
+    height: auto;
+    min-height: 260px;
+  }
+
+  .sleep-gauge-card {
+    min-height: 230px;
+  }
+}
+/* ============================================================
+   STEP 4 — STRESS CARD EXTRA INFORMATION
+   ============================================================ */
+
+.stress-radial-info {
+  position: relative;
+}
+
+.stress-level-label {
+  display: block;
+  font-size: 10px;
+  color: #9a8f98;
+  margin-top: 3px;
+}
+
+.stress-extra-info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.stress-info-box {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(235, 218, 221, 0.9);
+}
+
+.stress-info-box span {
+  display: block;
+  font-size: 8px;
+  color: #7f747d;
+  margin-bottom: 3px;
+}
+
+.stress-info-box strong {
+  display: block;
+  font-size: 10px;
+  color: #29443d;
+  font-weight: 600;
+}
+
+.stress-info-box:first-child strong {
+  color: #2da66f;
+}
+/* ============================================================
+   STRESS CIRCLE — EXACT CENTER TEXT
+   ONLY CENTER TEXT POSITION
+   ============================================================ */
+
+.stress-radial-center {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  width: 80px !important;
+  height: 75px !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: block !important;
+
+  text-align: center !important;
+  pointer-events: none;
+}
+
+/* 80 — EXACT CENTER OF RING */
+
+.stress-radial-center strong {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+/* /100 — directly below 80 */
+
+.stress-radial-center span {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: calc(50% + 19px) !important;
+
+  transform: translateX(-50%) !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+/* STRESS — below /100 */
+
+.stress-radial-center small {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: calc(50% + 34px) !important;
+
+  transform: translateX(-50%) !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  line-height: 1 !important;
+  text-align: center !important;
+}
+/* ============================================================
+   TOP ANALYTICS ROW
+   MOOD • STRESS • SLEEP
+   ============================================================ */
+
+.analytics-top-row {
+  width: 100%;
+  grid-column: 1 / -1;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* Every section gets exactly equal width */
+.analytics-top-row > .analytics-section {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   COMMON HEADING
+   ============================================================ */
+
+.analytics-top-row .analytics-section-heading {
+  width: 100%;
+  min-height: 92px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+.analytics-top-row .analytics-section-heading > div {
+  min-width: 0;
+}
+
+.analytics-top-row .analytics-section-heading h2 {
+  font-size: 21px;
+  line-height: 1.15;
+  margin: 4px 0 6px;
+}
+
+.analytics-top-row .analytics-section-heading p:not(.analytics-eyebrow) {
+  font-size: 11px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.analytics-top-row .analytics-eyebrow {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+/* ============================================================
+   MOOD
+   ============================================================ */
+
+.analytics-top-row .mood-chart-card {
+  width: 100%;
+  height: 280px;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analytics-top-row .mood-chart-card
+.recharts-responsive-container {
+  width: 100% !important;
+}
+
+/* ============================================================
+   STRESS
+   ============================================================ */
+
+.analytics-top-row .stress-radial-card {
+  width: 100%;
+  height: 280px;
+  min-width: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  padding: 10px 14px;
+}
+
+/* Stress circle */
+.analytics-top-row .stress-radial-chart {
+  width: 100%;
+  height: 155px;
+  flex-shrink: 0;
+}
+
+/* Stress information BELOW circle */
+.analytics-top-row .stress-radial-info {
+  width: 100%;
+  min-width: 0;
+  padding: 2px 10px 8px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Hide large icon so card stays clean */
+.analytics-top-row .stress-radial-info
+.stress-radial-icon {
+  display: none;
+}
+
+.analytics-top-row .stress-radial-info p {
+  font-size: 8px;
+  margin: 2px 0;
+}
+
+.analytics-top-row .stress-radial-info h3 {
+  font-size: 15px;
+  line-height: 1.1;
+  margin: 2px 0;
+}
+
+.analytics-top-row .stress-level-label {
+  font-size: 9px;
+  margin-bottom: 4px;
+}
+
+.analytics-top-row .stress-radial-info button {
+  width: auto;
+  min-width: 125px;
+  padding: 6px 10px;
+  font-size: 9px;
+}
+
+/* Keep extra boxes compact */
+.analytics-top-row .stress-extra-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.analytics-top-row .stress-info-box {
+  padding: 5px;
+  min-width: 0;
+}
+
+.analytics-top-row .stress-info-box span {
+  font-size: 7px;
+}
+
+.analytics-top-row .stress-info-box strong {
+  font-size: 8px;
+}
+
+/* ============================================================
+   SLEEP
+   ============================================================ */
+
+.analytics-top-row .sleep-gauge-card {
+  width: 100%;
+  height: 280px;
+  min-width: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  padding: 10px 14px;
+}
+
+/* Sleep circle */
+.analytics-top-row .sleep-gauge-visual {
+  width: 100%;
+  height: 165px;
+  flex-shrink: 0;
+}
+
+/* Sleep details BELOW circle */
+.analytics-top-row .sleep-gauge-info {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+
+  padding: 4px 4px 8px;
+}
+
+.analytics-top-row .sleep-gauge-info-item {
+  min-width: 0;
+  padding: 5px 2px;
+  text-align: center;
+}
+
+.analytics-top-row .sleep-gauge-info-item span {
+  display: block;
+  font-size: 7px;
+  white-space: nowrap;
+}
+
+.analytics-top-row .sleep-gauge-info-item strong {
+  display: block;
+  font-size: 9px;
+  margin-top: 3px;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   DESKTOP — KEEP 3 IN ONE ROW
+   ============================================================ */
+
+@media (min-width: 1001px) {
+  .analytics-top-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1000px) and (min-width: 701px) {
+  .analytics-top-row {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .analytics-top-row > .analytics-section {
+    min-width: 220px;
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .analytics-top-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .analytics-top-row > .analytics-section {
+    min-width: 0;
+  }
+
+  .analytics-top-row .analytics-section-heading {
+    min-height: auto;
+  }
+
+  .analytics-top-row .mood-chart-card,
+  .analytics-top-row .stress-radial-card,
+  .analytics-top-row .sleep-gauge-card {
+    height: 300px;
+  }
+}
+/* ============================================================
+   FINAL FIX — MOOD + STRESS + SLEEP EQUAL ROW
+   ============================================================ */
+
+.analytics-top-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+/* Every column equal */
+.analytics-top-row > .analytics-section {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* ============================================================
+   COMMON CARD HEIGHT
+   ============================================================ */
+
+.analytics-top-row .mood-chart-card,
+.analytics-top-row .stress-radial-card,
+.analytics-top-row .sleep-progress-card {
+  width: 100%;
+  height: 285px;
+  min-height: 285px;
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   MOOD
+   ============================================================ */
+
+.analytics-top-row .mood-chart-card {
+  padding: 12px 14px;
+  overflow: hidden;
+}
+
+.analytics-top-row .mood-chart-card
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 235px !important;
+}
+
+/* ============================================================
+   STRESS
+   ============================================================ */
+
+.analytics-top-row .stress-radial-card {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  overflow: hidden;
+}
+
+/* IMPORTANT — same size as sleep visual */
+.analytics-top-row .stress-radial-chart {
+  width: 100%;
+  height: 170px;
+  flex: 0 0 170px;
+  position: relative;
+}
+
+/* Override old 235px Recharts height */
+.analytics-top-row .stress-radial-chart
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 170px !important;
+}
+
+/* Stress center */
+.analytics-top-row .stress-radial-center {
+  width: 80px !important;
+  height: 70px !important;
+}
+
+/* Smaller stress number */
+.analytics-top-row .stress-radial-center strong {
+  font-size: 27px !important;
+}
+
+/* ============================================================
+   STRESS INFORMATION
+   ============================================================ */
+
+.analytics-top-row .stress-radial-info {
+  width: 100%;
+  min-width: 0;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.analytics-top-row .stress-radial-info
+.stress-radial-icon {
+  display: none;
+}
+
+.analytics-top-row .stress-radial-info p {
+  font-size: 7px;
+  margin: 2px 0;
+}
+
+.analytics-top-row .stress-radial-info h3 {
+  font-size: 14px;
+  line-height: 1.1;
+  margin: 2px 0;
+}
+
+.analytics-top-row .stress-level-label {
+  font-size: 8px;
+  margin: 1px 0;
+}
+
+.analytics-top-row .stress-radial-info button {
+  margin-top: 5px;
+  padding: 5px 9px;
+  font-size: 8px;
+}
+
+.analytics-top-row .stress-extra-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.analytics-top-row .stress-info-box {
+  padding: 5px;
+}
+
+.analytics-top-row .stress-info-box span {
+  font-size: 6px;
+}
+
+.analytics-top-row .stress-info-box strong {
+  font-size: 8px;
+}
+
+/* ============================================================
+   SLEEP
+   ============================================================ */
+
+.analytics-top-row .sleep-progress-card {
+  padding: 10px 14px;
+  overflow: hidden;
+}
+
+/* Sleep content */
+.analytics-top-row .sleep-gauge-card {
+  width: 100%;
+  height: 260px;
+  min-height: 260px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3px;
+  background: transparent;
+  border: 0;
+}
+
+/* Sleep circle same visual size */
+.analytics-top-row .sleep-gauge-visual {
+  width: 170px;
+  height: 170px;
+  flex: 0 0 170px;
+}
+
+/* Sleep number */
+.analytics-top-row .sleep-gauge-center strong {
+  font-size: 27px;
+}
+
+.analytics-top-row .sleep-gauge-center span {
+  font-size: 9px;
+}
+
+.analytics-top-row .sleep-gauge-center small {
+  font-size: 9px;
+}
+
+/* Sleep information */
+.analytics-top-row .sleep-gauge-info {
+  width: 100%;
+  padding: 0 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.analytics-top-row .sleep-gauge-info-item {
+  padding: 4px 2px;
+  text-align: center;
+  border-bottom: 0;
+}
+
+.analytics-top-row .sleep-gauge-info-item span {
+  font-size: 6px;
+  white-space: nowrap;
+}
+
+.analytics-top-row .sleep-gauge-info-item strong {
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   DESKTOP
+   ============================================================ */
+
+@media (min-width: 1001px) {
+  .analytics-top-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .analytics-top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-top-row .mood-chart-card,
+  .analytics-top-row .stress-radial-card,
+  .analytics-top-row .sleep-progress-card {
+    height: auto;
+    min-height: 285px;
+  }
+}
+/* ============================================================
+   FINAL FIX — MOOD / STRESS / SLEEP
+   EQUAL HORIZONTAL FORMAT
+   ============================================================ */
+
+/* Equal 3 columns */
+.analytics-main {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  align-items: start !important;
+}
+
+/* ------------------------------------------------------------
+   MOOD
+------------------------------------------------------------ */
+
+.analytics-section:has(.mood-chart-card) {
+  grid-column: 1 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.analytics-section:has(.mood-chart-card)
+.analytics-section-heading {
+  min-height: 82px !important;
+  margin-bottom: 12px !important;
+}
+
+.mood-chart-card {
+  width: 100% !important;
+  height: 285px !important;
+  min-height: 285px !important;
+  padding: 12px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.mood-chart-card
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 250px !important;
+}
+
+
+/* ------------------------------------------------------------
+   STRESS
+------------------------------------------------------------ */
+
+.analytics-section:has(.stress-radial-card) {
+  grid-column: 2 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.analytics-section:has(.stress-radial-card)
+.analytics-section-heading {
+  min-height: 82px !important;
+  margin-bottom: 12px !important;
+}
+
+.stress-radial-card {
+  width: 100% !important;
+  height: 285px !important;
+  min-height: 285px !important;
+
+  padding: 10px !important;
+
+  box-sizing: border-box !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 8px !important;
+
+  overflow: hidden !important;
+}
+
+/* Stress circle — smaller */
+.stress-radial-chart {
+  width: 58% !important;
+  height: 215px !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+}
+
+/* Recharts itself */
+.stress-radial-chart
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 215px !important;
+}
+
+/* Stress center */
+.stress-radial-center {
+  width: 75px !important;
+  height: 70px !important;
+}
+
+.stress-radial-center strong {
+  font-size: 27px !important;
+}
+
+.stress-radial-center span {
+  font-size: 9px !important;
+}
+
+.stress-radial-center small {
+  font-size: 8px !important;
+}
+
+
+/* Stress information beside circle */
+.stress-radial-info {
+  width: 42% !important;
+  min-width: 0 !important;
+
+  padding: 5px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.stress-radial-info
+.stress-radial-icon {
+  width: 28px !important;
+  height: 28px !important;
+
+  font-size: 14px !important;
+}
+
+.stress-radial-info p {
+  font-size: 7px !important;
+  margin: 5px 0 2px !important;
+}
+
+.stress-radial-info h3 {
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+  margin: 0 !important;
+}
+
+.stress-level-label {
+  font-size: 8px !important;
+}
+
+.stress-radial-info button {
+  margin-top: 7px !important;
+  padding: 6px 8px !important;
+  font-size: 7px !important;
+  width: 100% !important;
+}
+
+.stress-extra-info {
+  width: 100% !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  gap: 4px !important;
+
+  margin-top: 6px !important;
+}
+
+.stress-info-box {
+  width: 100% !important;
+  padding: 5px 6px !important;
+}
+
+.stress-info-box span {
+  font-size: 6px !important;
+}
+
+.stress-info-box strong {
+  font-size: 7px !important;
+}
+
+
+/* ------------------------------------------------------------
+   SLEEP
+------------------------------------------------------------ */
+
+.analytics-section:has(.sleep-progress-card) {
+  grid-column: 3 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.analytics-section:has(.sleep-progress-card)
+.analytics-section-heading {
+  min-height: 82px !important;
+  margin-bottom: 12px !important;
+}
+
+.sleep-progress-card {
+  width: 100% !important;
+  height: 285px !important;
+  min-height: 285px !important;
+
+  padding: 10px !important;
+
+  box-sizing: border-box !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid #dce5ef !important;
+  border-radius: 16px !important;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #f5f4ff
+  ) !important;
+}
+
+
+/* Sleep gauge */
+.sleep-gauge-card {
+  width: 100% !important;
+  height: 255px !important;
+  min-height: 255px !important;
+
+  padding: 5px !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 8px !important;
+
+  box-sizing: border-box !important;
+}
+
+/* Sleep circle */
+.sleep-gauge-visual {
+  width: 165px !important;
+  height: 165px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Sleep number */
+.sleep-gauge-center strong {
+  font-size: 27px !important;
+}
+
+.sleep-gauge-center span {
+  font-size: 9px !important;
+}
+
+.sleep-gauge-center small {
+  font-size: 8px !important;
+}
+
+
+/* Sleep details */
+.sleep-gauge-info {
+  width: 100px !important;
+  min-width: 0 !important;
+
+  padding-left: 5px !important;
+}
+
+.sleep-gauge-info-item {
+  padding: 7px 0 !important;
+}
+
+.sleep-gauge-info-item span {
+  font-size: 7px !important;
+}
+
+.sleep-gauge-info-item strong {
+  font-size: 11px !important;
+}
+
+
+/* ============================================================
+   DESKTOP — FORCE SAME CARD HEIGHT
+============================================================ */
+
+@media (min-width: 1001px) {
+
+  .analytics-section:has(.mood-chart-card),
+  .analytics-section:has(.stress-radial-card),
+  .analytics-section:has(.sleep-progress-card) {
+    height: auto !important;
+  }
+
+  .mood-chart-card,
+  .stress-radial-card,
+  .sleep-progress-card {
+    height: 285px !important;
+    min-height: 285px !important;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 700px) {
+
+  .analytics-main {
+    grid-template-columns: 1fr !important;
+  }
+
+  .analytics-section:has(.mood-chart-card),
+  .analytics-section:has(.stress-radial-card),
+  .analytics-section:has(.sleep-progress-card) {
+    grid-column: 1 !important;
+  }
+
+  .stress-radial-card {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 285px !important;
+  }
+
+  .stress-radial-chart {
+    width: 100% !important;
+  }
+
+  .stress-radial-info {
+    width: 100% !important;
+  }
+
+  .sleep-gauge-card {
+    flex-direction: column !important;
+    height: auto !important;
+  }
+
+  .sleep-gauge-info {
+    width: 100% !important;
+  }
+
+}
+/* ============================================================
+   FINAL TOP ROW FIX
+   MOOD • STRESS • SLEEP
+   CLEAN BALANCED CARD LAYOUT
+============================================================ */
+
+.analytics-top-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+/* ------------------------------------------------------------
+   COMMON TOP SECTION
+------------------------------------------------------------ */
+
+.analytics-top-row > .analytics-section {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Same heading height */
+.analytics-top-row .analytics-section-heading {
+  min-height: 78px;
+  margin-bottom: 12px;
+}
+
+/* ------------------------------------------------------------
+   MOOD CARD
+------------------------------------------------------------ */
+
+.analytics-top-row .mood-chart-card {
+  width: 100%;
+  height: 290px;
+  min-height: 290px;
+
+  padding: 18px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.analytics-top-row .mood-chart-card
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 250px !important;
+}
+
+/* ------------------------------------------------------------
+   STRESS CARD
+------------------------------------------------------------ */
+
+.analytics-top-row .stress-radial-card {
+  width: 100%;
+  height: 290px;
+  min-height: 290px;
+
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 0;
+
+  overflow: hidden;
+}
+
+/* Stress circle stays exactly in center */
+.analytics-top-row .stress-radial-chart {
+  width: 100%;
+  height: 190px;
+
+  flex-shrink: 0;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analytics-top-row .stress-radial-chart
+.recharts-responsive-container {
+  width: 190px !important;
+  height: 190px !important;
+}
+
+/* Stress center text */
+.analytics-top-row .stress-radial-center {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  width: 80px !important;
+  height: 75px !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: block !important;
+
+  text-align: center !important;
+}
+
+/* 63 */
+.analytics-top-row .stress-radial-center strong {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  margin: 0 !important;
+
+  font-size: 27px !important;
+  line-height: 1 !important;
+}
+
+/* /100 */
+.analytics-top-row .stress-radial-center span {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: calc(50% + 19px) !important;
+
+  transform: translateX(-50%) !important;
+
+  margin: 0 !important;
+
+  font-size: 10px !important;
+}
+
+/* STRESS */
+.analytics-top-row .stress-radial-center small {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: calc(50% + 34px) !important;
+
+  transform: translateX(-50%) !important;
+
+  margin: 0 !important;
+
+  font-size: 9px !important;
+}
+
+/* Stress information BELOW circle */
+.analytics-top-row .stress-radial-info {
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 0 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+/* Remove unnecessary icon */
+.analytics-top-row .stress-radial-info
+.stress-radial-icon {
+  display: none !important;
+}
+
+.analytics-top-row .stress-radial-info p {
+  margin: 0 0 2px;
+
+  font-size: 7px;
+}
+
+.analytics-top-row .stress-radial-info h3 {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.1;
+}
+
+.analytics-top-row .stress-level-label {
+  margin-top: 2px;
+  font-size: 8px;
+}
+
+.analytics-top-row .stress-radial-info button {
+  margin-top: 7px;
+
+  padding: 6px 13px;
+
+  font-size: 8px;
+}
+
+/* Hide extra information if it causes overflow */
+.analytics-top-row .stress-extra-info {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 5px;
+
+  margin-top: 5px;
+}
+
+.analytics-top-row .stress-info-box {
+  padding: 5px;
+}
+
+.analytics-top-row .stress-info-box span {
+  font-size: 6px;
+}
+
+.analytics-top-row .stress-info-box strong {
+  font-size: 7px;
+}
+
+/* ------------------------------------------------------------
+   SLEEP CARD
+------------------------------------------------------------ */
+
+.analytics-top-row .sleep-progress-card {
+  width: 100%;
+  height: 290px;
+  min-height: 290px;
+
+  padding: 14px;
+
+  overflow: hidden;
+}
+
+/* Sleep heading hidden inside card */
+.analytics-top-row .sleep-progress-title {
+  display: none;
+}
+
+/* Sleep visual + information */
+.analytics-top-row .sleep-gauge-card {
+  width: 100%;
+  height: 260px;
+  min-height: 260px;
+
+  padding: 5px;
+
+  border: 0;
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 4px;
+
+  overflow: hidden;
+}
+
+/* Sleep circle */
+.analytics-top-row .sleep-gauge-visual {
+  width: 175px;
+  height: 175px;
+
+  flex-shrink: 0;
+}
+
+/* Sleep center */
+.analytics-top-row .sleep-gauge-center strong {
+  font-size: 28px;
+}
+
+.analytics-top-row .sleep-gauge-center span {
+  font-size: 9px;
+  margin-top: 4px;
+}
+
+.analytics-top-row .sleep-gauge-center small {
+  font-size: 9px;
+  margin-top: 5px;
+}
+
+/* Sleep details BELOW circle */
+.analytics-top-row .sleep-gauge-info {
+  width: 100%;
+  min-width: 0;
+
+  padding: 0 4px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 4px;
+}
+
+.analytics-top-row .sleep-gauge-info-item {
+  padding: 5px 2px;
+
+  text-align: center;
+
+  border-bottom: 0;
+}
+
+.analytics-top-row .sleep-gauge-info-item span {
+  display: block;
+
+  font-size: 7px;
+
+  white-space: nowrap;
+}
+
+.analytics-top-row .sleep-gauge-info-item strong {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------
+   DESKTOP
+------------------------------------------------------------ */
+
+@media (min-width: 1001px) {
+
+  .analytics-top-row {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+/* ------------------------------------------------------------
+   TABLET
+------------------------------------------------------------ */
+
+@media (max-width: 1000px) and (min-width: 701px) {
+
+  .analytics-top-row {
+    grid-template-columns:
+      repeat(3, minmax(220px, 1fr));
+
+    gap: 14px;
+
+    overflow-x: auto;
+  }
+
+}
+
+/* ------------------------------------------------------------
+   MOBILE
+------------------------------------------------------------ */
+
+@media (max-width: 700px) {
+
+  .analytics-top-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .analytics-top-row .analytics-section-heading {
+    min-height: auto;
+  }
+
+  .analytics-top-row .mood-chart-card,
+  .analytics-top-row .stress-radial-card,
+  .analytics-top-row .sleep-progress-card {
+    height: 290px;
+    min-height: 290px;
+  }
+
+}
+/* ============================================================
+   FINAL — MOOD / STRESS / SLEEP TOP ROW
+============================================================ */
+
+.analytics-top-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.analytics-top-row > .analytics-section {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* =========================
+   COMMON HEADING
+========================= */
+
+.analytics-top-row .analytics-section-heading {
+  min-height: 78px;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   MOOD
+========================= */
+
+.analytics-top-row .mood-chart-card {
+  width: 100%;
+  height: 290px;
+  min-height: 290px;
+  padding: 16px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analytics-top-row
+.mood-chart-card
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 250px !important;
+}
+
+/* =========================
+   STRESS
+========================= */
+
+.analytics-top-row .stress-radial-card {
+  width: 100%;
+  height: 290px;
+  min-height: 290px;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 0;
+
+  overflow: hidden;
+}
+
+.analytics-top-row .stress-radial-chart {
+  width: 100%;
+  height: 185px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.analytics-top-row
+.stress-radial-chart
+.recharts-responsive-container {
+  width: 185px !important;
+  height: 185px !important;
+}
+
+/* STRESS CENTER */
+
+.analytics-top-row .stress-radial-center {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  width: 80px !important;
+  height: 75px !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: block !important;
+
+  text-align: center !important;
+  pointer-events: none;
+}
+
+.analytics-top-row .stress-radial-center strong {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  margin: 0 !important;
+
+  font-size: 27px !important;
+  line-height: 1 !important;
+}
+
+.analytics-top-row .stress-radial-center span {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: calc(50% + 18px) !important;
+
+  transform: translateX(-50%) !important;
+
+  margin: 0 !important;
+
+  font-size: 10px !important;
+}
+
+.analytics-top-row .stress-radial-center small {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: calc(50% + 33px) !important;
+
+  transform: translateX(-50%) !important;
+
+  margin: 0 !important;
+
+  font-size: 9px !important;
+}
+
+/* STRESS INFO BELOW CIRCLE */
+
+.analytics-top-row .stress-radial-info {
+  width: 100%;
+  min-width: 0;
+
+  padding: 0 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.analytics-top-row
+.stress-radial-info
+.stress-radial-icon {
+  display: none !important;
+}
+
+.analytics-top-row .stress-radial-info p {
+  margin: 0 0 2px;
+  font-size: 7px;
+}
+
+.analytics-top-row .stress-radial-info h3 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.1;
+}
+
+.analytics-top-row .stress-radial-info > span {
+  font-size: 8px;
+}
+
+.analytics-top-row .stress-radial-info button {
+  margin-top: 7px;
+  padding: 6px 13px;
+  font-size: 8px;
+}
+
+/* =========================
+   SLEEP
+========================= */
+
+.analytics-top-row .sleep-progress-card {
+  width: 100%;
+  height: 290px;
+  min-height: 290px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.analytics-top-row .sleep-progress-title {
+  display: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+  .analytics-top-row {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 14px;
+
+    overflow-x: auto;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .analytics-top-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    overflow-x: visible;
+  }
+
+  .analytics-top-row .mood-chart-card,
+  .analytics-top-row .stress-radial-card,
+  .analytics-top-row .sleep-progress-card {
+    height: 290px;
+    min-height: 290px;
+  }
+
+}
+/* ============================================================
+   SLEEP ANALYTICS — MATCH STRESS CARD HEIGHT
+   ============================================================ */
+
+.sleep-gauge-card {
+  height: 285px !important;
+  min-height: 285px !important;
+  max-height: 285px !important;
+  box-sizing: border-box !important;
+}
+/* ============================================================
+   FINAL SLEEP CARD LAYOUT
+   ============================================================ */
+
+.sleep-gauge-card {
+  height: 285px !important;
+  min-height: 285px !important;
+  max-height: 285px !important;
+
+  display: block !important;
+  padding: 16px 18px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Card header stays at the TOP */
+.sleep-gauge-card > div:nth-child(2) {
+  width: 100%;
+}
+
+/* Main sleep content */
+.sleep-gauge-card > div:nth-child(3) {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: 160px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 18px !important;
+}
+
+/* Sleep circle */
+.sleep-gauge-card .sleep-gauge-visual {
+  width: 160px !important;
+  height: 160px !important;
+}
+
+/* Right-side information */
+.sleep-gauge-card .sleep-gauge-info {
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+}
+
+/* Target + Status boxes */
+.sleep-gauge-card .sleep-gauge-info > div:first-child {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 8px !important;
+}
+
+/* Hide Sleep Score — reference card doesn't show it */
+.sleep-gauge-card .sleep-gauge-info > div:first-child > div:nth-child(2) {
+  display: none !important;
+}
+
+/* Compact information boxes */
+.sleep-gauge-card .sleep-gauge-info > div:first-child > div {
+  padding: 9px 10px !important;
+  min-height: 48px !important;
+  box-sizing: border-box !important;
+}
+
+/* Keep Target + Status visible */
+.sleep-gauge-card .sleep-gauge-info > div:first-child > div:nth-child(1),
+.sleep-gauge-card .sleep-gauge-info > div:first-child > div:nth-child(3) {
+  display: block !important;
+}
+/* ============================================================
+   NUTRITION REFERENCE DASHBOARD
+   Reference-style Nutrition Analytics UI
+============================================================ */
+
+.nutrition-reference-section {
+  width: 100%;
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.nutrition-reference-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+
+.nutrition-reference-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nutrition-reference-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff3dc;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.nutrition-reference-title h2 {
+  margin: 0;
+  color: #294b41;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.nutrition-reference-title p {
+  margin: 3px 0 0;
+  color: #8a9b96;
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+.nutrition-reference-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff5e7;
+  color: #d98b32;
+  font-size: 8px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   MAIN TWO-COLUMN LAYOUT
+============================================================ */
+
+.nutrition-reference-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 14px;
+  width: 100%;
+  max-width: 100%;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+.nutrition-reference-chart-card,
+.nutrition-reference-macro-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+/* ============================================================
+   LEFT — TREND GRAPH CARD
+============================================================ */
+
+.nutrition-reference-chart-card {
+  min-width: 0;
+  height: 300px;
+  padding: 14px 15px 10px;
+  box-sizing: border-box;
+
+  background: #fffdfb;
+  border: 1px solid #e9e4df;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+}
+
+.nutrition-reference-chart {
+  width: 100%;
+  height: 235px;
+  min-height: 0;
+}
+
+
+/* ============================================================
+   GRAPH LEGEND
+============================================================ */
+
+.nutrition-reference-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  min-height: 28px;
+  padding-top: 3px;
+
+  font-size: 8px;
+  color: #71817d;
+}
+
+.nutrition-reference-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.nutrition-reference-legend i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-calories {
+  background: #f59e0b;
+}
+
+.legend-protein {
+  background: #2fb58b;
+}
+
+.legend-carbs {
+  background: #2f80ed;
+}
+
+.legend-fats {
+  background: #8b5cf6;
+}
+
+
+/* ============================================================
+   RIGHT — MACRONUTRIENT CARD
+============================================================ */
+
+.nutrition-reference-macro-card {
+  height: 300px;
+  min-width: 0;
+  padding: 14px 15px;
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    145deg,
+    #f2fbf8 0%,
+    #ffffff 100%
+  );
+
+  border: 1px solid #dcebe5;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   MACRO HEADER
+============================================================ */
+
+.nutrition-reference-macro-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.nutrition-reference-macro-header h3 {
+  margin: 0;
+  color: #315248;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.nutrition-reference-macro-header p {
+  margin: 3px 0 0;
+  color: #8a9b96;
+  font-size: 7px;
+}
+
+.nutrition-reference-macro-header > span {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #e0ece8;
+  color: #6e817b;
+  font-size: 7px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   MACRO BODY
+============================================================ */
+
+.nutrition-reference-macro-body {
+  flex: 1;
+  min-height: 0;
+
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* ============================================================
+   DONUT
+============================================================ */
+
+.nutrition-reference-donut {
+  position: relative;
+  width: 150px;
+  height: 190px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nutrition-reference-donut-center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 75px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+  text-align: center;
+}
+
+.nutrition-reference-donut-center strong {
+  display: block;
+  color: #315248;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.nutrition-reference-donut-center span {
+  display: block;
+  margin-top: 4px;
+  color: #8a9b96;
+  font-size: 7px;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   MACRO LIST
+============================================================ */
+
+.nutrition-reference-macro-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.nutrition-reference-macro-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 7px 0;
+
+  border-bottom: 1px solid #edf2f0;
+}
+
+.nutrition-reference-macro-item:last-child {
+  border-bottom: none;
+}
+
+.nutrition-reference-macro-item > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.nutrition-reference-macro-item > div:first-child span {
+  color: #526963;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.nutrition-reference-macro-item > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.nutrition-reference-macro-item strong {
+  color: #526963;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.nutrition-reference-macro-item small {
+  color: #8a9b96;
+  font-size: 7px;
+}
+
+
+/* ============================================================
+   MACRO DOTS
+============================================================ */
+
+.macro-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.carbs-dot {
+  background: #2f80ed;
+}
+
+.protein-dot {
+  background: #2fb58b;
+}
+
+.fats-dot {
+  background: #f59e0b;
+}
+
+
+/* ============================================================
+   EMPTY STATE
+============================================================ */
+
+.nutrition-reference-macro-card .macro-empty {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #8a9b96;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .nutrition-reference-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nutrition-reference-chart-card,
+  .nutrition-reference-macro-card {
+    height: 300px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .nutrition-reference-header {
+    align-items: flex-start;
+  }
+
+  .nutrition-reference-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nutrition-reference-chart-card {
+    height: 285px;
+  }
+
+  .nutrition-reference-macro-card {
+    height: 320px;
+  }
+
+  .nutrition-reference-macro-body {
+    grid-template-columns: 135px minmax(0, 1fr);
+  }
+
+  .nutrition-reference-donut {
+    width: 135px;
+  }
+
+  .nutrition-reference-legend {
+    gap: 9px;
+  }
+
+}
+/* ============================================================
+   NUTRITION ANALYTICS
+   Reference-image style UI
+============================================================ */
+
+.analytics-main
+  > .analytics-section:has(.nutrition-reference-grid) {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+
+/* ------------------------------------------------------------
+   HEADER
+------------------------------------------------------------ */
+
+.nutrition-reference-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.nutrition-reference-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.nutrition-reference-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff3dc;
+  font-size: 15px;
+}
+
+.nutrition-reference-title h2 {
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 1.15;
+  font-weight: 800;
+
+  color: #29463e;
+}
+
+.nutrition-reference-title p {
+  margin: 2px 0 0;
+
+  font-size: 8px;
+  line-height: 1.2;
+
+  color: #8b9995;
+}
+
+.nutrition-reference-count {
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: #fff5e8;
+  color: #df9136;
+
+  font-size: 7px;
+  font-weight: 800;
+}
+
+
+/* ------------------------------------------------------------
+   TWO CARDS
+------------------------------------------------------------ */
+
+.nutrition-reference-grid {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 1.45fr)
+    minmax(310px, 0.85fr) !important;
+
+  gap: 12px !important;
+
+  align-items: stretch !important;
+
+  box-sizing: border-box;
+}
+
+
+/* ------------------------------------------------------------
+   LEFT GRAPH CARD
+------------------------------------------------------------ */
+
+.nutrition-reference-chart-card {
+  width: 100% !important;
+  height: 270px !important;
+
+  min-width: 0 !important;
+
+  padding: 10px 12px 6px;
+
+  box-sizing: border-box;
+
+  border-radius: 14px;
+
+  border: 1px solid #e7e5e0;
+
+  background: #fffdfa;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.nutrition-reference-chart {
+  width: 100% !important;
+  height: 225px !important;
+
+  min-width: 0;
+}
+
+
+/* ------------------------------------------------------------
+   GRAPH LEGEND
+------------------------------------------------------------ */
+
+.nutrition-reference-legend {
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  color: #71827d;
+
+  font-size: 7px;
+}
+
+.nutrition-reference-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nutrition-reference-legend i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  display: inline-block;
+}
+
+.legend-calories {
+  background: #f59e0b;
+}
+
+.legend-protein {
+  background: #2fb58b;
+}
+
+.legend-carbs {
+  background: #2f80ed;
+}
+
+.legend-fats {
+  background: #8b5cf6;
+}
+
+
+/* ------------------------------------------------------------
+   RIGHT MACRONUTRIENT CARD
+------------------------------------------------------------ */
+
+.nutrition-reference-macro-card {
+  width: 100% !important;
+  height: 270px !important;
+
+  min-width: 0 !important;
+
+  padding: 12px 14px;
+
+  box-sizing: border-box;
+
+  border-radius: 14px;
+
+  border: 1px solid #dcebe5;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f4fbf8 0%,
+      #ffffff 100%
+    );
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ------------------------------------------------------------
+   MACRO HEADER
+------------------------------------------------------------ */
+
+.nutrition-reference-macro-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 4px;
+}
+
+.nutrition-reference-macro-header h3 {
+  margin: 0;
+
+  color: #315248;
+
+  font-size: 11px;
+  line-height: 1.15;
+
+  font-weight: 800;
+}
+
+.nutrition-reference-macro-header p {
+  margin: 3px 0 0;
+
+  color: #8a9b96;
+
+  font-size: 7px;
+}
+
+.nutrition-reference-macro-header > span {
+  padding: 4px 7px;
+
+  border-radius: 999px;
+
+  border: 1px solid #dfeae6;
+
+  background: #ffffff;
+
+  color: #6d817a;
+
+  font-size: 6px;
+
+  white-space: nowrap;
+}
+
+
+/* ------------------------------------------------------------
+   DONUT + INFO
+------------------------------------------------------------ */
+
+.nutrition-reference-macro-body {
+  flex: 1;
+
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    150px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+/* ------------------------------------------------------------
+   DONUT
+------------------------------------------------------------ */
+
+.nutrition-reference-donut {
+  position: relative;
+
+  width: 150px;
+  height: 190px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.nutrition-reference-donut-center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 75px;
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.nutrition-reference-donut-center strong {
+  display: block;
+
+  color: #315248;
+
+  font-size: 15px;
+
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+.nutrition-reference-donut-center span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #8a9b96;
+
+  font-size: 6px;
+}
+
+
+/* ------------------------------------------------------------
+   MACRO DETAILS
+------------------------------------------------------------ */
+
+.nutrition-reference-macro-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.nutrition-reference-macro-item {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.nutrition-reference-macro-item > div:first-child {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.nutrition-reference-macro-item
+  > div:first-child span {
+  color: #526963;
+
+  font-size: 7px;
+
+  font-weight: 700;
+}
+
+.nutrition-reference-macro-item
+  > div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 1px;
+}
+
+.nutrition-reference-macro-item strong {
+  color: #526963;
+
+  font-size: 7px;
+
+  font-weight: 800;
+}
+
+.nutrition-reference-macro-item small {
+  color: #8a9b96;
+
+  font-size: 6px;
+}
+
+
+/* ------------------------------------------------------------
+   DOTS
+------------------------------------------------------------ */
+
+.macro-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+}
+
+.carbs-dot {
+  background: #2f80ed;
+}
+
+.protein-dot {
+  background: #2fb58b;
+}
+
+.fats-dot {
+  background: #f59e0b;
+}
+
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+
+  .nutrition-reference-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nutrition-reference-chart-card,
+  .nutrition-reference-macro-card {
+    height: 270px !important;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .nutrition-reference-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nutrition-reference-macro-body {
+    grid-template-columns: 130px minmax(0, 1fr);
+  }
+
+  .nutrition-reference-donut {
+    width: 130px;
+  }
+
+}
+/* ============================================================
+   NUTRITION ANALYTICS — REFERENCE HEADER
+============================================================ */
+
+.nutrition-card-reference-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.nutrition-card-reference-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.nutrition-card-reference-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fff1d8;
+
+  font-size: 14px;
+}
+
+.nutrition-macro-icon {
+  background: #dff5ec;
+}
+
+.nutrition-card-reference-title h2,
+.nutrition-card-reference-title h3 {
+  margin: 0;
+
+  color: #315047;
+
+  font-size: 12px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.nutrition-card-reference-title p {
+  margin: 2px 0 0;
+
+  color: #91a09b;
+
+  font-size: 7px;
+  line-height: 1.2;
+}
+
+.nutrition-period-select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  min-width: 64px;
+  height: 25px;
+
+  padding: 0 20px 0 9px;
+
+  border: 1px solid #e4e9e7;
+  border-radius: 8px;
+
+  background-color: #ffffff;
+
+  color: #71827d;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  outline: none;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.nutrition-period-select:focus {
+  border-color: #b9d9cd;
+}
+/* ============================================================
+   HYDRATION + WELLNESS TRENDS
+   REFERENCE TWO-COLUMN LAYOUT
+============================================================ */
+
+.wellness-bottom-reference-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.6fr);
+
+  gap: 12px;
+
+  align-items: stretch;
+
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   WELLNESS ANALYTICS — FINAL BOTTOM REFERENCE UI
+============================================================ */
+
+.wellness-bottom-reference-section {
+  width: 100%;
+  margin: 0;
+}
+
+
+/* ============================================================
+   TWO COLUMN LAYOUT
+============================================================ */
+
+.wellness-bottom-reference-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.65fr);
+
+  gap: 12px;
+
+  align-items: stretch;
+
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   COMMON CARD HEADER
+============================================================ */
+
+.reference-card-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+.reference-card-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.reference-card-icon {
+  width: 29px;
+  height: 29px;
+
+  flex: 0 0 29px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 13px;
+}
+
+.hydration-reference-icon {
+  background: #dff3ff;
+  color: #3faee0;
+}
+
+.trends-reference-icon {
+  background: #dff5ec;
+  color: #2fb58b;
+}
+
+.reference-card-title h2 {
+  margin: 0;
+
+  color: #315047;
+
+  font-size: 11px;
+
+  line-height: 1.15;
+
+  font-weight: 800;
+}
+
+.reference-card-title p {
+  margin: 2px 0 0;
+
+  color: #91a09b;
+
+  font-size: 6.5px;
+
+  line-height: 1.2;
+}
+
+
+/* ============================================================
+   DROPDOWN
+============================================================ */
+
+.reference-period-select {
+  width: 62px;
+  height: 23px;
+
+  padding: 0 7px;
+
+  border: 1px solid #e0e8e5;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #71827d;
+
+  font-size: 6.5px;
+
+  font-weight: 700;
+
+  outline: none;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   HYDRATION CARD
+============================================================ */
+
+.hydration-reference-card {
+  width: 100%;
+  height: 176px;
+
+  min-width: 0;
+
+  padding: 9px 10px 7px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d9ebf3;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f3fbff 0%,
+      #ffffff 100%
+    );
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* ============================================================
+   HYDRATION BODY
+============================================================ */
+
+.hydration-reference-body {
+  display: grid;
+
+  grid-template-columns:
+    105px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex: 1;
+
+  min-height: 0;
+}
+
+
+/* ============================================================
+   HYDRATION DONUT
+============================================================ */
+
+.hydration-reference-donut {
+  position: relative;
+
+  width: 100px;
+  height: 100px;
+
+  margin: 0 auto;
+}
+
+.hydration-reference-donut-center {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.hydration-reference-donut-center strong {
+  color: #318db7;
+
+  font-size: 14px;
+
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+.hydration-reference-donut-center span {
+  margin-top: 3px;
+
+  color: #82958f;
+
+  font-size: 5.5px;
+}
+
+
+/* ============================================================
+   HYDRATION DETAILS
+============================================================ */
+
+.hydration-reference-details {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 6px;
+}
+
+.hydration-reference-detail-box {
+  padding: 6px 8px;
+
+  border: 1px solid #e4eef1;
+
+  border-radius: 7px;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.7
+  );
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.hydration-reference-detail-box span {
+  color: #82958f;
+
+  font-size: 5.5px;
+}
+
+.hydration-reference-detail-box strong {
+  color: #315047;
+
+  font-size: 7px;
+}
+
+.hydration-status-good {
+  color: #2fb58b !important;
+}
+
+.hydration-status-progress {
+  color: #42a9d2 !important;
+}
+
+.hydration-status-low {
+  color: #d79535 !important;
+}
+
+
+/* ============================================================
+   GLASS INDICATORS
+============================================================ */
+
+.hydration-reference-glasses {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-top: 3px;
+}
+
+.hydration-reference-glasses span {
+  font-size: 11px;
+
+  line-height: 1;
+}
+
+.glass-filled {
+  color: #42b8e8;
+}
+
+.glass-empty {
+  color: #dbe8ed;
+}
+
+
+/* ============================================================
+   WELLNESS TRENDS CARD
+============================================================ */
+
+.wellness-trends-reference-card {
+  width: 100%;
+  height: 176px;
+
+  min-width: 0;
+
+  padding: 9px 11px 5px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dcebe5;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f4fbf8 0%,
+      #ffffff 100%
+    );
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* ============================================================
+   TRENDS GRAPH
+============================================================ */
+
+.wellness-trends-reference-chart {
+  width: 100%;
+
+  height: 120px;
+
+  min-height: 0;
+
+  flex: 1;
+
+  margin-top: 1px;
+}
+
+
+/* ============================================================
+   LEGEND
+============================================================ */
+
+.wellness-reference-legend {
+  width: 100%;
+
+  height: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  flex-shrink: 0;
+
+  margin-top: 1px;
+}
+
+.wellness-reference-legend span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+
+  color: #82958f;
+
+  font-size: 5.5px;
+
+  white-space: nowrap;
+}
+
+.legend-dot {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  display: inline-block;
+}
+
+.mental-dot {
+  background: #f59e0b;
+}
+
+.stress-dot {
+  background: #ef6b7a;
+}
+
+.sleep-dot {
+  background: #2f80ed;
+}
+
+.nutrition-dot {
+  background: #2fb58b;
+}
+
+.hydration-dot {
+  background: #8b5cf6;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .wellness-bottom-reference-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .wellness-bottom-reference-grid {
+    gap: 10px;
+  }
+
+  .hydration-reference-card,
+  .wellness-trends-reference-card {
+    height: 190px;
+  }
+
+}
+/* ============================================================
+   FINAL FIX — BOTTOM WELLNESS ROW FULL WIDTH
+============================================================ */
+
+.analytics-main
+  > .wellness-bottom-reference-section {
+  grid-column: 1 / -1 !important;
+
+  width: 100% !important;
+
+  max-width: none !important;
+
+  min-width: 0 !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ============================================================
+   TWO CARDS — REFERENCE PROPORTION
+============================================================ */
+
+.wellness-bottom-reference-section
+  .wellness-bottom-reference-grid {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.65fr) !important;
+
+  gap: 12px !important;
+
+  align-items: stretch !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ============================================================
+   HYDRATION
+============================================================ */
+
+.wellness-bottom-reference-section
+  .hydration-reference-card {
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  height: 176px !important;
+
+  box-sizing: border-box !important;
+
+  overflow: hidden !important;
+}
+
+
+/* ============================================================
+   WELLNESS TRENDS
+============================================================ */
+
+.wellness-bottom-reference-section
+  .wellness-trends-reference-card {
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  height: 176px !important;
+
+  box-sizing: border-box !important;
+
+  overflow: hidden !important;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .wellness-bottom-reference-section
+    .wellness-bottom-reference-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+}

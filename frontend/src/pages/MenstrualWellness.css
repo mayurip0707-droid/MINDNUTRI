@@ -1,0 +1,3396 @@
+* {
+  box-sizing: border-box;
+}
+
+.menstrual-page {
+  min-height: 100vh;
+  background: #fbfaff;
+  color: #20264d;
+  display: flex;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.menstrual-sidebar {
+  width: 162px;
+  min-width: 162px;
+  min-height: 100vh;
+  background: #fffdfd;
+  border-right: 1px solid #eee8f1;
+  padding: 20px 12px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 20;
+}
+
+.mn-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 7px 25px;
+}
+
+.mn-brand-icon {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #f9b4d1,
+    #b9a5ff
+  );
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.mn-brand-name {
+  font-size: 17px;
+  font-weight: 750;
+  color: #20244d;
+}
+
+.mn-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mn-nav-item {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #303651;
+  min-height: 39px;
+  padding: 8px 9px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  font-size: 11.5px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mn-nav-item span {
+  width: 17px;
+  font-size: 15px;
+  text-align: center;
+  color: #5d5e79;
+}
+
+.mn-nav-item:hover {
+  background: #fff0f5;
+  color: #d93478;
+}
+
+.mn-nav-item.active {
+  background: linear-gradient(
+    90deg,
+    #ffe5ef,
+    #fff0f6
+  );
+  color: #d82f75;
+  font-weight: 700;
+}
+
+.mn-nav-item.active span {
+  color: #d82f75;
+}
+
+.mn-sidebar-bottom-card {
+  position: absolute;
+  left: 20px;
+  right: 18px;
+  bottom: 20px;
+  min-height: 173px;
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    #ffe8ed,
+    #fff0f0
+  );
+  padding: 17px 10px;
+  overflow: hidden;
+  text-align: center;
+  color: #26305a;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.mn-sidebar-bottom-card strong {
+  display: block;
+  margin-top: 43px;
+  font-size: 10.5px;
+}
+
+.mn-sidebar-bottom-card > span {
+  display: block;
+  color: #df4d87;
+  margin-top: 8px;
+}
+
+.mn-sidebar-flower {
+  position: absolute;
+  left: 15px;
+  top: 14px;
+  color: #ed8aa9;
+  font-size: 19px;
+}
+
+.mn-sidebar-woman {
+  position: absolute;
+  right: 18px;
+  top: 19px;
+  width: 52px;
+  height: 58px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(
+    160deg,
+    #f4a6bd,
+    #ee6f9c
+  );
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.menstrual-main {
+  flex: 1;
+  min-width: 0;
+  padding-bottom: 30px;
+}
+
+.mn-topbar {
+  height: 51px;
+  border-bottom: 1px solid #eee8f1;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px 0 28px;
+}
+
+.mn-user-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mn-icon-button {
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  color: #232849;
+  cursor: pointer;
+}
+
+.mn-user-divider {
+  width: 1px;
+  height: 24px;
+  background: #ece8ef;
+  margin: 0 3px;
+}
+
+.mn-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    #ee4f91,
+    #ca2e71
+  );
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.mn-user-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  font-size: 10px;
+  color: #70738b;
+}
+
+.mn-user-text strong {
+  color: #20254c;
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+.mn-chevron {
+  color: #20254c;
+  font-size: 16px;
+  margin-left: 2px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.mn-hero {
+  min-height: 118px;
+  background: linear-gradient(
+    100deg,
+    #fff8f8 0%,
+    #fff1f4 52%,
+    #fff8fa 100%
+  );
+  border-bottom: 1px solid #f2e6eb;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 18px 40px;
+}
+
+.mn-hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 560px;
+}
+
+.mn-hero-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.mn-flower-icon {
+  color: #ed5f9b;
+  font-size: 29px;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.mn-hero h1 {
+  margin: 0;
+  font-size: 29px;
+  letter-spacing: -0.8px;
+  color: #202750;
+  font-weight: 780;
+}
+
+.mn-hero p {
+  margin: 8px 0 0;
+  max-width: 540px;
+  color: #3e4768;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.mn-hero-art {
+  position: absolute;
+  right: 210px;
+  bottom: -34px;
+  width: 210px;
+  height: 145px;
+  z-index: 1;
+}
+
+.mn-hero-person {
+  position: absolute;
+  left: 69px;
+  bottom: 10px;
+  width: 82px;
+  height: 110px;
+  border-radius: 48% 48% 35% 35%;
+  background: linear-gradient(
+    145deg,
+    #ffd0d8,
+    #f08aaa
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 40px;
+  box-shadow: 0 10px 30px rgba(204, 77, 125, 0.15);
+}
+
+.mn-hero-leaf {
+  position: absolute;
+  color: #79ae81;
+  font-size: 39px;
+}
+
+.leaf-one {
+  left: 25px;
+  bottom: 30px;
+  transform: rotate(-25deg);
+}
+
+.mn-hero-flower {
+  position: absolute;
+  color: #ee8ba9;
+  font-size: 22px;
+}
+
+.flower-one {
+  right: 25px;
+  top: 25px;
+}
+
+.flower-two {
+  left: 38px;
+  top: 15px;
+}
+
+.mn-hero-quote {
+  position: absolute;
+  right: 42px;
+  top: 31px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  color: #40283f;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.mn-hero-quote b {
+  color: #ed4d87;
+}
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.mn-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #ebe8f3;
+  border-radius: 10px;
+  box-shadow:
+    0 5px 20px rgba(53, 43, 93, 0.035),
+    0 1px 4px rgba(53, 43, 93, 0.02);
+}
+
+.mn-summary-grid,
+.mn-pattern-grid,
+.mn-three-grid,
+.mn-food-grid,
+.mn-bottom-grid,
+.full-symptom-card,
+.mn-disclaimer {
+  margin-left: 28px;
+  margin-right: 28px;
+}
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.mn-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.mn-summary-card {
+  min-height: 126px;
+  border-radius: 9px;
+  padding: 14px 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pink-card {
+  background: linear-gradient(
+    145deg,
+    #fff7fa,
+    #fffdfd
+  );
+  border: 1px solid #f7d8e6;
+}
+
+.blue-card {
+  background: linear-gradient(
+    145deg,
+    #f7f8ff,
+    #ffffff
+  );
+  border: 1px solid #dce2fb;
+}
+
+.green-card {
+  background: linear-gradient(
+    145deg,
+    #f5fffa,
+    #ffffff
+  );
+  border: 1px solid #d4eee1;
+}
+
+.rose-card {
+  background: linear-gradient(
+    145deg,
+    #fff8fa,
+    #ffffff
+  );
+  border: 1px solid #f2d9e5;
+}
+
+.mn-summary-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin-bottom: 9px;
+}
+
+.mn-summary-icon.pink {
+  background: #ffd5e5;
+  color: #d72f77;
+}
+
+.mn-summary-icon.blue {
+  background: #dedcff;
+  color: #4339ae;
+}
+
+.mn-summary-icon.green {
+  background: #ccefdc;
+  color: #18845b;
+}
+
+.mn-summary-icon.rose {
+  background: #ffd3e5;
+  color: #ca2d72;
+}
+
+.mn-summary-label {
+  font-size: 11px;
+  color: #4a4e6b;
+  margin-bottom: 5px;
+}
+
+.mn-summary-card strong {
+  display: block;
+  color: #22264d;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.mn-summary-card small {
+  display: block;
+  color: #71758b;
+  font-size: 9.5px;
+  margin-top: 7px;
+  max-width: 90%;
+  line-height: 1.4;
+}
+
+.mn-summary-arrow {
+  position: absolute;
+  right: 12px;
+  bottom: 16px;
+  color: #d83176;
+  font-size: 23px;
+}
+
+.green-card .mn-summary-arrow {
+  color: #22956a;
+}
+
+.blue-card .mn-summary-arrow {
+  color: #3038a1;
+}
+
+/* =========================================================
+   PATTERN + INSIGHTS
+========================================================= */
+
+.mn-pattern-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(250px, 0.85fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.mn-pattern-card,
+.mn-insights-card {
+  padding: 15px 17px;
+  min-height: 325px;
+}
+
+.mn-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.mn-card-title-wrap,
+.mn-small-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mn-section-icon {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.pink-icon {
+  background: #ffe0ec;
+  color: #e4397d;
+}
+
+.lavender-icon {
+  background: #e5e0ff;
+  color: #6650cf;
+}
+
+.reminder-icon {
+  background: #ffdce8;
+  color: #db3b79;
+}
+
+.food-icon {
+  background: #ffead9;
+  color: #e97929;
+}
+
+.phase-icon {
+  background: #eadfff;
+  color: #684fd1;
+}
+
+.green-icon {
+  background: #dcf5e4;
+  color: #26905d;
+}
+
+.late-icon {
+  background: #e8e2ff;
+  color: #6750c7;
+}
+
+.purple-icon {
+  background: #e5e0ff;
+  color: #6952cf;
+}
+
+.symptom-icon {
+  background: #ffdce9;
+  color: #dd397a;
+}
+
+.tip-icon {
+  background: #e8e0ff;
+  color: #6850c7;
+}
+
+.mn-card-title-wrap h2 {
+  margin: 0;
+  font-size: 15px;
+  color: #23294f;
+}
+
+.mn-card-title-wrap p {
+  margin: 3px 0 0;
+  color: #74778e;
+  font-size: 10px;
+}
+
+.mn-chart-toggle {
+  display: flex;
+  border: 1px solid #e9e4ec;
+  border-radius: 20px;
+  padding: 2px;
+  background: #fff;
+}
+
+.mn-chart-toggle button {
+  border: 0;
+  background: transparent;
+  color: #3e4260;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 9.5px;
+  cursor: pointer;
+}
+
+.mn-chart-toggle button.active {
+  background: linear-gradient(
+    90deg,
+    #eb397f,
+    #d9367a
+  );
+  color: white;
+}
+
+.mn-chart {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.mn-chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  color: #555a76;
+  font-size: 9px;
+  margin-top: -3px;
+}
+
+.mn-chart-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mn-chart-legend i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.purple-dot {
+  background: #7448db;
+}
+
+.pink-dot {
+  background: #f2408a;
+}
+
+.mn-empty-chart {
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #686d86;
+}
+
+.mn-empty-chart > div {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #ffe1ed;
+  color: #db3a7a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.mn-empty-chart strong {
+  font-size: 12px;
+  color: #323754;
+}
+
+.mn-empty-chart p {
+  font-size: 10px;
+  margin: 6px 0 0;
+}
+
+/* =========================================================
+   INSIGHTS
+========================================================= */
+
+.mn-insights-card {
+  background: linear-gradient(
+    145deg,
+    #fcfbff,
+    #f8f7ff
+  );
+}
+
+.mn-insight-list {
+  margin-top: 13px;
+}
+
+.mn-insight-row {
+  display: flex;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid #ebe8f1;
+}
+
+.mn-insight-row:last-child {
+  border-bottom: 0;
+}
+
+.mn-insight-row > span {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 50%;
+  background: #23a77c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  margin-top: 1px;
+}
+
+.mn-insight-row p {
+  margin: 0;
+  color: #3d4261;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.mn-text-link {
+  border: 0;
+  background: transparent;
+  color: #5b43c6;
+  font-size: 10px;
+  padding: 12px 0 0;
+  cursor: pointer;
+}
+
+/* =========================================================
+   THREE CARDS
+========================================================= */
+
+.mn-three-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.85fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.mn-three-grid > .mn-card {
+  min-height: 224px;
+  padding: 15px;
+}
+
+.mn-small-header h3 {
+  margin: 0;
+  color: #252b50;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.mn-small-header p {
+  margin: 2px 0 0;
+  font-size: 9px;
+  color: #777b91;
+}
+
+.mn-card h4 {
+  color: #252952;
+  font-size: 13px;
+  margin: 15px 0 6px;
+}
+
+.pink-heading {
+  color: #e33a7d !important;
+  font-size: 14px !important;
+}
+
+.late-title {
+  color: #6950c8 !important;
+}
+
+.mn-main-message {
+  color: #33405f;
+  font-size: 10px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.mn-card-description {
+  color: #515874;
+  font-size: 9.5px;
+  line-height: 1.55;
+  margin: 10px 0;
+}
+
+.mn-phase-subtitle {
+  color: #6d7188;
+  font-size: 9.5px;
+  line-height: 1.45;
+  margin: 0 0 9px;
+}
+
+.mn-pink-button {
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    #eb3b80,
+    #d93478
+  );
+  color: #fff;
+  border-radius: 18px;
+  padding: 8px 14px;
+  font-size: 9.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 13px rgba(224, 48, 115, 0.14);
+  transition: 0.2s ease;
+}
+
+.mn-pink-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 17px rgba(224, 48, 115, 0.2);
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mn-check-list {
+  margin: 8px 0 12px;
+}
+
+.mn-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 7px 0;
+}
+
+.mn-check-row span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #48b980;
+  color: white;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mn-check-row p {
+  margin: 0;
+  font-size: 9.5px;
+  color: #39405e;
+  line-height: 1.35;
+}
+
+.mn-phase-range {
+  color: #6d52c7;
+  font-weight: 700;
+  font-size: 10px;
+  margin: 0;
+}
+
+.mn-phase-progress {
+  margin-top: 16px;
+}
+
+.mn-phase-track {
+  height: 8px;
+  background: #eeeaf4;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mn-phase-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #d7cdfb,
+    #e33b80
+  );
+}
+
+.mn-next-phase {
+  margin-top: 9px;
+  background: #f7eefe;
+  color: #7c6099;
+  padding: 7px 9px;
+  border-radius: 7px;
+  font-size: 8.5px;
+}
+
+.mn-next-phase strong {
+  color: #5e4a9b;
+}
+
+/* =========================================================
+   FOOD SECTION
+========================================================= */
+
+.mn-food-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 0.75fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.food-guidance-card,
+.late-card {
+  padding: 15px;
+  min-height: 215px;
+}
+
+.mn-food-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+  margin-top: 13px;
+}
+
+.mn-food-column {
+  border-radius: 9px;
+  padding: 12px;
+  min-height: 165px;
+}
+
+.eat-column {
+  background: #f0fbf5;
+  border: 1px solid #d8efe1;
+}
+
+.limit-column {
+  background: #fff0f3;
+  border: 1px solid #f6d8e1;
+}
+
+.mn-food-column-title {
+  font-weight: 750;
+  font-size: 10px;
+  margin-bottom: 9px;
+  color: #2d6045;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.limit-column .mn-food-column-title {
+  color: #bd3e64;
+}
+
+.mn-food-column-title span {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #ccefdc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.limit-column .mn-food-column-title span {
+  background: #ffd7e2;
+}
+
+.mn-food-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mn-food-column li {
+  position: relative;
+  padding-left: 15px;
+  margin: 7px 0;
+  color: #48516b;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.eat-column li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2aa46d;
+  font-weight: 800;
+}
+
+.limit-column li::before {
+  content: "×";
+  position: absolute;
+  left: 0;
+  color: #df456c;
+  font-weight: 800;
+}
+
+.mn-food-decor {
+  margin-top: 8px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.late-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    #fcfbff,
+    #fff
+  );
+}
+
+.late-card h4 {
+  font-size: 11px;
+  margin-top: 17px;
+}
+
+.late-card p {
+  color: #4d5573;
+  font-size: 9.5px;
+  line-height: 1.55;
+  margin: 7px 0;
+}
+
+.mn-late-decoration {
+  position: absolute;
+  right: 22px;
+  bottom: 19px;
+  width: 70px;
+  height: 75px;
+  border-radius: 48% 48% 30% 30%;
+  background: linear-gradient(
+    145deg,
+    #ffd8e4,
+    #f1a0bb
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 31px;
+}
+
+/* =========================================================
+   BOTTOM GRID
+========================================================= */
+
+.mn-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.85fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.history-card,
+.symptom-summary-card,
+.quick-tips-card {
+  padding: 15px;
+  min-height: 270px;
+}
+
+.mn-view-all {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: #e33c7e;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.mn-history-subtitle {
+  font-size: 9px;
+  color: #75798d;
+  margin: 11px 0 7px;
+}
+
+.mn-history-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mn-history-row {
+  min-height: 35px;
+  display: grid;
+  grid-template-columns: 25px 1fr auto 18px;
+  align-items: center;
+  gap: 7px;
+  border-bottom: 1px solid #f0edf2;
+}
+
+.mn-history-date-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffe2ec;
+  color: #d83978;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+.mn-history-date {
+  color: #3e4664;
+  font-size: 9px;
+}
+
+.mn-history-row > strong {
+  font-size: 9px;
+  color: #343956;
+  font-weight: 650;
+}
+
+.mn-delete-small {
+  border: 0;
+  background: transparent;
+  color: #bd8099;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  padding: 2px;
+}
+
+.mn-delete-small:hover {
+  color: #df3475;
+}
+
+.mn-period-entry {
+  border-top: 1px solid #eeeaf1;
+  margin-top: 9px;
+  padding-top: 10px;
+}
+
+.mn-period-entry h4 {
+  margin: 0 0 8px;
+  font-size: 10px;
+}
+
+.mn-period-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.mn-period-form label,
+.mn-symptom-form-grid label,
+.mn-note-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #4e536d;
+  font-size: 8.5px;
+  font-weight: 650;
+}
+
+.mn-period-form input,
+.mn-symptom-form-grid input,
+.mn-symptom-form-grid select,
+.mn-note-label textarea {
+  width: 100%;
+  border: 1px solid #e8e4ec;
+  background: #fff;
+  border-radius: 7px;
+  padding: 7px 8px;
+  outline: none;
+  color: #343a59;
+  font-size: 9px;
+  font-family: inherit;
+}
+
+.mn-period-form input:focus,
+.mn-symptom-form-grid input:focus,
+.mn-symptom-form-grid select:focus,
+.mn-note-label textarea:focus {
+  border-color: #e895b5;
+  box-shadow: 0 0 0 3px rgba(233, 73, 132, 0.06);
+}
+
+.mn-error,
+.mn-success {
+  border-radius: 7px;
+  padding: 7px 8px;
+  margin: 8px 0;
+  font-size: 8.5px;
+  line-height: 1.4;
+}
+
+.mn-error {
+  background: #fff0f2;
+  color: #bd385b;
+  border: 1px solid #f6d8df;
+}
+
+.mn-success {
+  background: #eefaf4;
+  color: #26865c;
+  border: 1px solid #d4eddf;
+}
+
+.mn-small-empty {
+  padding: 22px 8px;
+  text-align: center;
+  color: #7c8094;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SYMPTOM SUMMARY
+========================================================= */
+
+.mn-symptom-bars {
+  margin-top: 13px;
+}
+
+.mn-symptom-bar-row {
+  margin-bottom: 9px;
+}
+
+.mn-symptom-bar-label {
+  display: flex;
+  justify-content: space-between;
+  color: #48506e;
+  font-size: 8.5px;
+  margin-bottom: 4px;
+}
+
+.mn-symptom-bar-label strong {
+  font-size: 8.5px;
+}
+
+.mn-bar-track {
+  height: 6px;
+  border-radius: 10px;
+  background: #f0edf2;
+  overflow: hidden;
+}
+
+.mn-bar-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.color-0 {
+  background: #ed5c9c;
+}
+
+.color-1 {
+  background: #ad6be7;
+}
+
+.color-2 {
+  background: #f4a258;
+}
+
+.color-3 {
+  background: #65afe8;
+}
+
+.color-4 {
+  background: #51c992;
+}
+
+.symptom-summary-card .mn-pink-button {
+  margin-top: 4px;
+}
+
+/* =========================================================
+   QUICK TIPS
+========================================================= */
+
+.quick-tips-card {
+  background: linear-gradient(
+    145deg,
+    #fbf9ff,
+    #f7f2ff
+  );
+}
+
+.mn-tip-list {
+  margin-top: 14px;
+}
+
+.mn-tip-list > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #444b69;
+  font-size: 9px;
+  margin: 9px 0;
+  line-height: 1.4;
+}
+
+.mn-tip-list span {
+  width: 19px;
+  height: 19px;
+  min-width: 19px;
+  border-radius: 6px;
+  background: #ebe3ff;
+  color: #7155cb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mn-quick-quote {
+  text-align: center;
+  margin-top: 17px;
+  color: #563f7a;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.mn-quick-quote span {
+  color: #5a407d;
+}
+
+.mn-quick-quote b {
+  color: #e74783;
+}
+
+/* =========================================================
+   FULL SYMPTOM TRACKER
+========================================================= */
+
+.full-symptom-card {
+  margin-top: 16px;
+  padding: 18px;
+  background: linear-gradient(
+    145deg,
+    #fff,
+    #fffafd
+  );
+}
+
+.mn-symptom-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 22px;
+}
+
+.mn-symptom-form-area {
+  padding-right: 20px;
+  border-right: 1px solid #eeeaf2;
+}
+
+.mn-symptom-form-area
+  .mn-small-header
+  h3 {
+  font-size: 13px;
+}
+
+.mn-symptom-form-area
+  .mn-small-header
+  p {
+  font-size: 9px;
+  color: #777b91;
+  margin: 3px 0 0;
+}
+
+.mn-symptom-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin-top: 17px;
+}
+
+.mn-note-label {
+  margin-top: 10px;
+}
+
+.mn-note-label textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+
+.mn-symptom-form-area .mn-pink-button {
+  margin-top: 11px;
+}
+
+.mn-recent-symptoms h3 {
+  font-size: 13px;
+  margin: 0 0 12px;
+  color: #282e53;
+}
+
+.mn-recent-symptom-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.mn-recent-symptom-row {
+  display: grid;
+  grid-template-columns: 30px 1fr auto 20px;
+  gap: 8px;
+  align-items: center;
+  min-height: 52px;
+  border-bottom: 1px solid #efebf2;
+}
+
+.mn-symptom-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffe3ed;
+  color: #d83a78;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mn-recent-symptom-row > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.mn-recent-symptom-row strong {
+  color: #363c5b;
+  font-size: 9.5px;
+}
+
+.mn-recent-symptom-row span {
+  color: #83869a;
+  font-size: 8px;
+  margin-top: 2px;
+}
+
+.mn-recent-symptom-row small {
+  color: #676c84;
+  font-size: 8px;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mn-severity {
+  padding: 5px 8px;
+  border-radius: 20px;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.mn-severity.mild {
+  background: #e8f7ee;
+  color: #27895b;
+}
+
+.mn-severity.moderate {
+  background: #fff2dc;
+  color: #b5761f;
+}
+
+.mn-severity.severe {
+  background: #ffe4e9;
+  color: #c73759;
+}
+
+.mn-safety-note {
+  background: #fff3f5;
+  border: 1px solid #f7d8e0;
+  border-radius: 8px;
+  padding: 9px;
+  color: #8a4057;
+  font-size: 8.5px;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.mn-disclaimer {
+  margin-top: 16px;
+  border-radius: 18px;
+  min-height: 47px;
+  background: #fff;
+  border: 1px solid #f0ebf0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  color: #777b8d;
+}
+
+.mn-disclaimer > span {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  border-radius: 50%;
+  background: #f2eff5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666b82;
+  font-size: 11px;
+}
+
+.mn-disclaimer p {
+  margin: 0;
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1250px) {
+  .mn-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mn-three-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .phase-card {
+    grid-column: span 2;
+  }
+
+  .mn-bottom-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quick-tips-card {
+    grid-column: span 2;
+  }
+
+  .mn-hero-art {
+    right: 160px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .menstrual-sidebar {
+    width: 72px;
+    min-width: 72px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .mn-brand {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mn-brand-name {
+    display: none;
+  }
+
+  .mn-nav-item {
+    justify-content: center;
+    padding: 9px;
+  }
+
+  .mn-nav-item span {
+    font-size: 17px;
+  }
+
+  .mn-nav-item {
+    font-size: 0;
+  }
+
+  .mn-sidebar-bottom-card {
+    display: none;
+  }
+
+  .mn-hero-quote {
+    display: none;
+  }
+
+  .mn-hero-art {
+    right: 40px;
+  }
+
+  .mn-pattern-grid,
+  .mn-food-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-insights-card {
+    min-height: auto;
+  }
+
+  .mn-symptom-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-symptom-form-area {
+    border-right: 0;
+    border-bottom: 1px solid #eeeaf2;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .mn-topbar {
+    padding: 0 15px;
+  }
+
+  .mn-hero {
+    padding: 20px;
+  }
+
+  .mn-hero h1 {
+    font-size: 24px;
+  }
+
+  .mn-hero-art {
+    opacity: 0.35;
+    right: 0;
+  }
+
+  .mn-summary-grid,
+  .mn-three-grid,
+  .mn-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .phase-card,
+  .quick-tips-card {
+    grid-column: auto;
+  }
+
+  .mn-summary-grid,
+  .mn-pattern-grid,
+  .mn-three-grid,
+  .mn-food-grid,
+  .mn-bottom-grid,
+  .full-symptom-card,
+  .mn-disclaimer {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .mn-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mn-chart-toggle {
+    align-self: flex-start;
+  }
+
+  .mn-food-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-symptom-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .menstrual-sidebar {
+    display: none;
+  }
+
+  .mn-hero {
+    min-height: 150px;
+  }
+
+  .mn-user-text,
+  .mn-user-divider {
+    display: none;
+  }
+
+  .mn-summary-grid,
+  .mn-pattern-grid,
+  .mn-three-grid,
+  .mn-food-grid,
+  .mn-bottom-grid,
+  .full-symptom-card,
+  .mn-disclaimer {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .mn-summary-grid {
+    gap: 10px;
+  }
+
+  .mn-period-form {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-recent-symptom-row {
+    grid-template-columns: 28px 1fr auto;
+  }
+
+  .mn-recent-symptom-row
+    .mn-delete-small {
+    display: none;
+  }
+}
+/* =========================================================
+   THREE FEATURE CARDS
+   Reference UI: Upcoming Reminder / Recommendation / Phase
+========================================================= */
+
+.mn-three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.mn-three-grid .mn-card {
+  position: relative;
+  min-height: 285px;
+  height: 285px;
+  border-radius: 10px;
+  padding: 20px 22px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   UPCOMING REMINDER
+========================================================= */
+
+.reminder-card {
+  background: linear-gradient(
+    135deg,
+    #fff5f8 0%,
+    #fffafd 100%
+  );
+
+  border: 1px solid #f4dce6;
+}
+
+.reminder-card .mn-small-header {
+  margin-bottom: 22px;
+}
+
+.mn-small-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.mn-small-header h3 {
+  margin: 0;
+  color: #17204a;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.mn-section-icon {
+  width: 29px;
+  height: 29px;
+  min-width: 29px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.reminder-icon {
+  background: #ffdce8;
+}
+
+.reminder-card .pink-heading,
+.reminder-card .late-title {
+  margin: 0 0 10px;
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.reminder-card .pink-heading {
+  color: #e52c70;
+}
+
+.reminder-card .late-title {
+  color: #d84d72;
+}
+
+.mn-main-message {
+  margin: 0 0 15px;
+  color: #27345f;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.reminder-card .mn-card-description {
+  margin: 0;
+  max-width: 94%;
+  color: #526083;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.mn-pink-button {
+  margin-top: auto;
+  align-self: flex-start;
+  border: none;
+  border-radius: 22px;
+  padding: 10px 18px;
+  background: linear-gradient(
+    135deg,
+    #e62f72,
+    #d92c6b
+  );
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(222, 43, 106, 0.18);
+  transition: transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.mn-pink-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 15px rgba(222, 43, 106, 0.25);
+}
+
+.mn-pink-button span {
+  margin-left: 5px;
+}
+
+
+/* =========================================================
+   TODAY'S RECOMMENDATION
+========================================================= */
+
+.recommendation-card {
+  background: linear-gradient(
+    135deg,
+    #fffdf9 0%,
+    #ffffff 100%
+  );
+
+  border: 1px solid #e4e1df;
+}
+
+.recommendation-card .mn-small-header {
+  margin-bottom: 14px;
+}
+
+.food-icon {
+  background: #ffe7d5;
+}
+
+.recommendation-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+
+.recommendation-text {
+  width: 64%;
+  padding-right: 4px;
+}
+
+.recommendation-text h4 {
+  margin: 0 0 6px;
+  color: #1d2a57;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.mn-phase-subtitle {
+  margin: 0 0 10px;
+  color: #586383;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.mn-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.mn-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.mn-check-row span {
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  border-radius: 50%;
+  background: #32b782;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+.mn-check-row p {
+  margin: 0;
+  color: #435273;
+  font-size: 10.5px;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   FOOD VISUAL
+========================================================= */
+
+.food-visual {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  width: 35%;
+  height: 135px;
+}
+
+.food-bowl {
+  position: absolute;
+  right: 17px;
+  bottom: 9px;
+  width: 85px;
+  height: 58px;
+  border-radius: 0 0 50px 50px;
+  background: #d9eff0;
+  border: 4px solid #8ccfd2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  transform: rotate(-2deg);
+  z-index: 2;
+}
+
+.food-fruit {
+  position: absolute;
+  z-index: 3;
+  font-size: 23px;
+}
+
+.fruit-one {
+  right: 62px;
+  top: 24px;
+}
+
+.fruit-two {
+  right: 27px;
+  top: 30px;
+}
+
+.fruit-three {
+  right: 76px;
+  top: 47px;
+  font-size: 20px;
+}
+
+.food-water {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  font-size: 45px;
+  z-index: 4;
+}
+
+.recommendation-button {
+  margin-top: 7px;
+}
+
+
+/* =========================================================
+   CYCLE PHASE
+========================================================= */
+
+.phase-card {
+  background: linear-gradient(
+    135deg,
+    #fffaff 0%,
+    #ffffff 100%
+  );
+
+  border: 1px solid #eadcf4;
+}
+
+.phase-card .mn-small-header {
+  margin-bottom: 17px;
+}
+
+.phase-icon {
+  background: #eee2ff;
+}
+
+.phase-card h4 {
+  margin: 0 0 3px;
+  color: #17205a;
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.mn-phase-range {
+  margin: 0 0 13px;
+  color: #263465;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.phase-card .mn-card-description {
+  margin: 0;
+  color: #586383;
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PHASE TIMELINE
+========================================================= */
+
+.mn-phase-progress {
+  margin-top: auto;
+  padding: 12px 0 8px;
+}
+
+.mn-phase-track {
+  position: relative;
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.mn-phase-progress-fill {
+  position: absolute;
+  left: 0;
+  top: 13px;
+  height: 3px;
+  border-radius: 5px;
+  background: #d72f7a;
+  z-index: 1;
+}
+
+.mn-phase-track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 13px;
+  height: 3px;
+  border-radius: 5px;
+  background: #e8e1ec;
+}
+
+.phase-dots {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.phase-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #e8e1ec;
+  border: 2px solid #ffffff;
+  box-sizing: content-box;
+}
+
+.phase-dots .active-dot {
+  background: #ef4a91;
+}
+
+.phase-dots .main-dot {
+  width: 15px;
+  height: 15px;
+  background: #df367d;
+  box-shadow: 0 2px 6px rgba(220, 48, 119, 0.25);
+}
+
+
+/* =========================================================
+   NEXT PHASE STRIP
+========================================================= */
+
+.mn-next-phase {
+  background: #f5e8fb;
+  border-radius: 7px;
+  padding: 9px 12px;
+  color: #72517e;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.mn-next-phase strong {
+  font-weight: 600;
+  color: #6c4d7a;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+  .mn-three-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-three-grid .mn-card {
+    height: auto;
+    min-height: 270px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mn-three-grid .mn-card {
+    padding: 18px;
+  }
+
+  .mn-small-header h3 {
+    font-size: 15px;
+  }
+
+  .reminder-card .pink-heading,
+  .reminder-card .late-title {
+    font-size: 16px;
+  }
+
+  .mn-main-message {
+    font-size: 12px;
+  }
+
+  .recommendation-text {
+    width: 67%;
+  }
+
+  .food-visual {
+    width: 33%;
+  }
+}
+/* =========================================================
+   FINAL FIX - 3 CARDS FIT INSIDE PAGE
+========================================================= */
+
+/* Prevent horizontal overflow */
+.mn-three-grid {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* Every card must stay inside its grid column */
+.mn-three-grid > .mn-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  height: auto;
+  min-height: 285px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   UPCOMING REMINDER
+========================================================= */
+
+.reminder-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.reminder-card .mn-main-message {
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.reminder-card .mn-card-description {
+  font-size: 11px;
+  line-height: 1.55;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   RECOMMENDATION - FIX CUT TEXT
+========================================================= */
+
+.recommendation-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.recommendation-content {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 auto;
+
+  overflow: visible;
+}
+
+.recommendation-text {
+  width: 68%;
+  min-width: 0;
+  max-width: 68%;
+  padding-right: 4px;
+  box-sizing: border-box;
+}
+
+.recommendation-text h4 {
+  font-size: 14px;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.recommendation-text .mn-phase-subtitle {
+  font-size: 10px;
+  line-height: 1.45;
+  margin-bottom: 9px;
+}
+
+.mn-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.mn-check-row {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+  gap: 7px;
+}
+
+.mn-check-row p {
+  min-width: 0;
+  margin: 0;
+
+  font-size: 10px;
+  line-height: 1.4;
+  color: #465574;
+
+  overflow: visible;
+}
+
+
+/* Food illustration stays on right */
+.food-visual {
+  width: 32%;
+  min-width: 0;
+  right: 0;
+}
+
+
+/* Button stays below everything */
+.recommendation-card .mn-pink-button {
+  position: relative;
+  flex-shrink: 0;
+
+  margin-top: 10px;
+  margin-bottom: 0;
+
+  align-self: flex-start;
+}
+
+
+/* =========================================================
+   CYCLE PHASE
+========================================================= */
+
+.phase-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.phase-card .mn-card-description {
+  font-size: 11px;
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   Don't let phase progress create extra width
+========================================================= */
+
+.phase-card .mn-phase-progress {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.phase-card .mn-phase-track {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.phase-card .mn-next-phase {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .mn-three-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .mn-three-grid > .mn-card {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .mn-check-row p {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 850px) {
+  .mn-three-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-three-grid > .mn-card {
+    min-height: 280px;
+  }
+}
+/* =========================================================
+   FINAL THREE-CARD LAYOUT FIX
+========================================================= */
+
+.mn-three-grid {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+
+  gap: 14px;
+
+  /* IMPORTANT: restore space from graph above */
+  margin-top: 16px;
+  margin-bottom: 0;
+
+  margin-left: 0;
+  margin-right: 0;
+
+  padding: 0;
+}
+
+.mn-three-grid > .mn-card {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* Make sure card content cannot push grid outside */
+.mn-three-grid .mn-card * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* Recommendation text must stay inside its card */
+.recommendation-card .recommendation-content {
+  width: 100%;
+  min-width: 0;
+}
+
+.recommendation-card .recommendation-text {
+  min-width: 0;
+  max-width: 68%;
+}
+
+.recommendation-card .food-visual {
+  max-width: 32%;
+}
+
+
+/* Phase timeline stays inside card */
+.phase-card .mn-phase-progress,
+.phase-card .mn-phase-track,
+.phase-card .mn-next-phase {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1251px) {
+  .mn-three-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1250px) and (min-width: 761px) {
+  .mn-three-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+  }
+
+  .mn-three-grid .phase-card {
+    grid-column: span 2;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .mn-three-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .mn-three-grid .phase-card {
+    grid-column: auto;
+  }
+}
+/* =========================================================
+   FIX THREE CARDS ALIGNMENT WITH PAGE CONTAINER
+========================================================= */
+
+.mn-three-grid {
+  width: calc(100% - 42px) !important;
+  max-width: calc(100% - 42px) !important;
+
+  margin-left: 21px !important;
+  margin-right: 21px !important;
+
+  box-sizing: border-box;
+  gap: 14px;
+}
+
+
+/* Keep all 3 cards inside this width */
+.mn-three-grid > .mn-card {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* =========================================================
+   FINAL REFERENCE UI
+   Upcoming Reminder / Today's Recommendation / Cycle Phase
+========================================================= */
+
+.mn-reference-three-grid {
+  width: calc(100% - 42px);
+  max-width: calc(100% - 42px);
+
+  margin: 16px 21px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1.04fr)
+    minmax(0, 0.84fr);
+
+  gap: 14px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.mn-ref-card {
+  position: relative;
+
+  min-width: 0;
+  width: 100%;
+  height: 250px;
+  min-height: 250px;
+
+  padding: 20px 18px;
+
+  box-sizing: border-box;
+
+  border-radius: 9px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.mn-ref-header {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 17px;
+}
+
+.mn-ref-header h3 {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  color: #16204a;
+}
+
+.mn-ref-icon {
+  width: 25px;
+  height: 25px;
+
+  min-width: 25px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+
+  box-sizing: border-box;
+}
+
+.reminder-ref-icon {
+  background: #ffdce8;
+}
+
+.food-ref-icon {
+  background: #ffe9d7;
+}
+
+.phase-ref-icon {
+  background: #eadfff;
+}
+
+
+/* =========================================================
+   REMINDER CARD
+========================================================= */
+
+.mn-ref-reminder {
+  border: 1px solid #f1d9e3;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff8fb 0%,
+      #ffffff 100%
+    );
+}
+
+.mn-ref-reminder-content {
+  position: relative;
+
+  display: flex;
+
+  width: 100%;
+  height: calc(100% - 42px);
+
+  box-sizing: border-box;
+}
+
+.mn-ref-reminder-text {
+  width: 72%;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.mn-ref-pink-title,
+.mn-ref-late-title {
+  margin: 0 0 8px;
+
+  font-size: 14px;
+  line-height: 1.35;
+
+  font-weight: 700;
+}
+
+.mn-ref-pink-title {
+  color: #e62f72;
+}
+
+.mn-ref-late-title {
+  color: #d24d73;
+}
+
+.mn-ref-main-text {
+  margin: 0 0 11px;
+
+  font-size: 10px;
+  line-height: 1.55;
+
+  color: #354467;
+}
+
+.mn-ref-description {
+  margin: 0;
+
+  font-size: 9.5px;
+  line-height: 1.55;
+
+  color: #66718a;
+}
+
+
+/* =========================================================
+   CALENDAR VISUAL
+========================================================= */
+
+.mn-ref-calendar {
+  position: absolute;
+
+  right: 2px;
+  top: 24px;
+
+  width: 47px;
+  height: 54px;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  border: 1px solid #f0cbd8;
+
+  box-shadow:
+    0 4px 12px rgba(220, 45, 110, 0.08);
+
+  transform: rotate(1deg);
+}
+
+.mn-ref-calendar-top {
+  width: 100%;
+  height: 13px;
+
+  border-radius: 6px 6px 0 0;
+
+  background: #ed4a82;
+}
+
+.mn-ref-calendar-body {
+  position: relative;
+
+  height: calc(100% - 13px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mn-ref-calendar-date {
+  position: absolute;
+
+  top: 5px;
+
+  font-size: 7px;
+
+  color: #6f5871;
+}
+
+.mn-ref-flower {
+  font-size: 20px;
+
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.mn-ref-button {
+  border: none;
+
+  border-radius: 18px;
+
+  padding: 9px 15px;
+
+  margin-top: auto;
+
+  align-self: flex-start;
+
+  background: #e93273;
+
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 10px rgba(228, 45, 112, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.mn-ref-button span {
+  margin-left: 5px;
+}
+
+.mn-ref-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 14px rgba(228, 45, 112, 0.25);
+}
+
+
+/* =========================================================
+   RECOMMENDATION CARD
+========================================================= */
+
+.mn-ref-recommendation {
+  border: 1px solid #dedfe4;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffefa 0%,
+      #ffffff 100%
+    );
+
+  display: flex;
+  flex-direction: column;
+}
+
+.mn-ref-recommendation .mn-ref-header {
+  margin-bottom: 13px;
+}
+
+.mn-ref-recommendation-content {
+  position: relative;
+
+  width: 100%;
+
+  flex: 1;
+
+  min-height: 0;
+}
+
+.mn-ref-recommendation-text {
+  width: 66%;
+
+  min-width: 0;
+}
+
+.mn-ref-recommendation-text h4 {
+  margin: 0 0 5px;
+
+  font-size: 13px;
+  line-height: 1.35;
+
+  color: #1b2852;
+}
+
+.mn-ref-subtitle {
+  margin: 0 0 10px;
+
+  font-size: 8.5px;
+  line-height: 1.45;
+
+  color: #68728a;
+}
+
+
+/* =========================================================
+   CHECK LIST
+========================================================= */
+
+.mn-ref-check-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.mn-ref-check-row {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.mn-ref-check {
+  width: 12px;
+  height: 12px;
+
+  min-width: 12px;
+
+  margin-top: 1px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #32b985;
+
+  color: white;
+
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.mn-ref-check-row p {
+  margin: 0;
+
+  min-width: 0;
+
+  font-size: 8.5px;
+  line-height: 1.45;
+
+  color: #4d5a76;
+}
+
+
+/* =========================================================
+   FOOD VISUAL
+========================================================= */
+
+.mn-ref-food-visual {
+  position: absolute;
+
+  right: 0;
+  top: 3px;
+
+  width: 31%;
+  height: 125px;
+
+  pointer-events: none;
+}
+
+.mn-ref-fruit {
+  position: absolute;
+
+  font-size: 17px;
+}
+
+.fruit-a {
+  right: 34px;
+  top: 24px;
+}
+
+.fruit-b {
+  right: 12px;
+  top: 37px;
+}
+
+.fruit-c {
+  right: 45px;
+  top: 52px;
+
+  font-size: 15px;
+}
+
+.mn-ref-water {
+  position: absolute;
+
+  right: 0;
+  top: 0;
+
+  font-size: 31px;
+}
+
+.mn-ref-bowl {
+  position: absolute;
+
+  right: 12px;
+  bottom: 8px;
+
+  width: 58px;
+  height: 40px;
+
+  border-radius:
+    0 0 35px 35px;
+
+  border: 3px solid #83cbcb;
+
+  background: #d8eeee;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+
+  box-sizing: border-box;
+}
+
+.recommendation-ref-button {
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   CYCLE PHASE
+========================================================= */
+
+.mn-ref-phase {
+  border: 1px solid #e5d8ef;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaff 0%,
+      #ffffff 100%
+    );
+
+  display: flex;
+  flex-direction: column;
+}
+
+.mn-ref-phase .mn-ref-header {
+  margin-bottom: 16px;
+}
+
+.mn-ref-phase-title {
+  margin: 0 0 3px;
+
+  font-size: 14px;
+  line-height: 1.3;
+
+  color: #1a2257;
+
+  font-weight: 700;
+}
+
+.mn-ref-phase-range {
+  margin: 0 0 12px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  color: #273562;
+}
+
+.mn-ref-phase-description {
+  margin: 0;
+
+  font-size: 9px;
+  line-height: 1.55;
+
+  color: #5c6680;
+}
+
+
+/* =========================================================
+   PHASE TIMELINE
+========================================================= */
+
+.mn-ref-phase-timeline {
+  position: relative;
+
+  width: 100%;
+  height: 24px;
+
+  margin-top: auto;
+  margin-bottom: 9px;
+}
+
+.mn-ref-phase-line {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 10px;
+
+  height: 4px;
+
+  border-radius: 10px;
+
+  background: #e8dfeb;
+}
+
+.mn-ref-phase-fill {
+  position: absolute;
+
+  left: 0;
+
+  top: 10px;
+
+  height: 4px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #cfa9e9,
+      #e33b82
+    );
+
+  z-index: 2;
+}
+
+.mn-ref-phase-dot {
+  position: absolute;
+
+  top: 7px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #e4dfe8;
+
+  border: 2px solid #ffffff;
+
+  z-index: 4;
+
+  box-sizing: content-box;
+}
+
+.dot-1 {
+  left: 0;
+}
+
+.dot-2 {
+  left: 16.66%;
+}
+
+.dot-3 {
+  left: 33.33%;
+}
+
+.dot-4 {
+  left: 50%;
+}
+
+.dot-5 {
+  left: 66.66%;
+}
+
+.dot-6 {
+  left: 83.33%;
+}
+
+.dot-7 {
+  right: 0;
+}
+
+.mn-ref-current-phase {
+  position: absolute;
+
+  top: 3px;
+
+  width: 13px;
+  height: 13px;
+
+  margin-left: -6.5px;
+
+  border-radius: 50%;
+
+  background: #e23880;
+
+  border: 3px solid #f8d9e8;
+
+  box-sizing: border-box;
+
+  z-index: 6;
+}
+
+
+/* =========================================================
+   NEXT PHASE
+========================================================= */
+
+.mn-ref-next-phase {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 7px 10px;
+
+  border-radius: 6px;
+
+  background: #f5e7fb;
+
+  color: #75567d;
+
+  font-size: 8px;
+
+  line-height: 1.4;
+}
+
+.mn-ref-next-phase span {
+  margin-right: 3px;
+}
+
+.mn-ref-next-phase strong {
+  color: #6c4b78;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+  .mn-reference-three-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    width: calc(100% - 30px);
+    max-width: calc(100% - 30px);
+
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .mn-ref-phase {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 700px) {
+  .mn-reference-three-grid {
+    grid-template-columns: 1fr;
+
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .mn-ref-phase {
+    grid-column: auto;
+  }
+
+  .mn-ref-card {
+    height: 250px;
+    min-height: 250px;
+  }
+}
+/* =========================================================
+   MENSTRUAL WELLNESS - SPECIAL FEMININE THEME
+========================================================= */
+
+.menstrual-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255, 210, 225, 0.9) 0%,
+      rgba(255, 210, 225, 0) 30%
+    ),
+    radial-gradient(
+      circle at 90% 8%,
+      rgba(218, 195, 238, 0.85) 0%,
+      rgba(218, 195, 238, 0) 32%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(238, 188, 211, 0.5) 0%,
+      rgba(238, 188, 211, 0) 38%
+    ),
+    linear-gradient(
+      135deg,
+      #f3d9e4 0%,
+      #ead9e9 45%,
+      #e2d8eb 100%
+    );
+
+  background-attachment: fixed;
+}
+
+/* Menstrual Wellness — Bottom Back to Dashboard */
+.mn-back-dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 28px 0 12px;
+  padding: 0 0 8px;
+}
+
+.mn-back-dashboard button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 11px 22px;
+
+  border: 1px solid #e5b8c8;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #db3e7a, #b60951);
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  white-space: nowrap;
+
+  box-shadow: 0 4px 12px rgba(173, 88, 124, 0.18);
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mn-back-dashboard button:hover {
+  background: linear-gradient(135deg, #ff3381, #da4784);
+  box-shadow: 0 6px 16px rgba(173, 88, 124, 0.25);
+  transform: translateY(-2px);
+}
+
+.mn-back-dashboard button:active {
+  transform: translateY(0);
+}
+
+.mn-back-dashboard button:focus-visible {
+  outline: 2px solid #c86f91;
+  outline-offset: 3px;
+}
+
+/* Clickable menstrual summary cards */
+.mn-summary-card[role="button"] {
+  cursor: pointer;
+}
+
+.mn-summary-card[role="button"]:focus-visible {
+  outline: 2px solid #d63384;
+  outline-offset: 3px;
+}
+
+/* Highlight the exact destination after scrolling */
+.mn-highlight-target {
+  outline: 3px solid rgba(214, 51, 132, 0.65) !important;
+  outline-offset: 3px;
+  box-shadow:
+    0 0 0 6px rgba(214, 51, 132, 0.10),
+    0 10px 30px rgba(214, 51, 132, 0.16) !important;
+  animation: mnTargetHighlight 0.65s ease-in-out 2;
+  border-radius: 16px;
+}
+
+@keyframes mnTargetHighlight {
+  0%, 100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mn-highlight-target {
+    animation: none;
+  }
+}
