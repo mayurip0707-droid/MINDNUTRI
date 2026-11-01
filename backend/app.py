@@ -8,6 +8,10 @@ import numpy as np
 
 import sqlite3
 import secrets
+import os
+import psycopg2
+from psycopg2.extras import RealDictCursor
+
 from datetime import datetime, timezone
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -92,65 +96,118 @@ CORS(
 # ============================================================
 
 ACCOUNT_DB = BASE_DIR / "mindnutri_accounts.db"
+DATABASE_URL = os.environ.get("DATABASE_URL", "").strip()
+
+
+class AccountConnection:
+    """Small compatibility wrapper for local SQLite and hosted PostgreSQL."""
+
+    def __init__(self):
+        self.is_postgres = bool(DATABASE_URL)
+        if self.is_postgres:
+            self.connection = psycopg2.connect(DATABASE_URL)
+        else:
+            self.connection = sqlite3.connect(str(ACCOUNT_DB))
+            self.connection.row_factory = sqlite3.Row
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        try:
+            if exc_type is None:
+                self.connection.commit()
+            else:
+                self.connection.rollback()
+        finally:
+            self.connection.close()
+        return False
+
+    def execute(self, query, params=()):
+        if self.is_postgres:
+            cursor = self.connection.cursor(cursor_factory=RealDictCursor)
+            cursor.execute(query.replace("?", "%s"), params)
+            return cursor
+        return self.connection.execute(query, params)
 
 
 def get_account_db():
-    connection = sqlite3.connect(str(ACCOUNT_DB))
-    connection.row_factory = sqlite3.Row
-    return connection
+    return AccountConnection()
 
 
 def init_account_db():
     with get_account_db() as connection:
-        connection.execute("""
-            CREATE TABLE IF NOT EXISTS users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                full_name TEXT NOT NULL,
-                email TEXT NOT NULL UNIQUE COLLATE NOCASE,
-                password_hash TEXT NOT NULL,
-                profile_json TEXT NOT NULL DEFAULT '{}',
-                created_at TEXT NOT NULL
-            )
-        """)
-
-        connection.execute("""
-            CREATE TABLE IF NOT EXISTS user_sessions (
-                token TEXT PRIMARY KEY,
-                user_id INTEGER NOT NULL,
-                created_at TEXT NOT NULL,
-                FOREIGN KEY (user_id) REFERENCES users(id)
-                    ON DELETE CASCADE
-            )
-        """)
-
-        connection.execute("""
-            CREATE TABLE IF NOT EXISTS user_data (
-                user_id INTEGER NOT NULL,
-                data_key TEXT NOT NULL,
-                data_json TEXT NOT NULL,
-                updated_at TEXT NOT NULL,
-                PRIMARY KEY (user_id, data_key),
-                FOREIGN KEY (user_id) REFERENCES users(id)
-                    ON DELETE CASCADE
-            )
-        """)
+        if connection.is_postgres:
+            connection.execute("""
+                CREATE TABLE IF NOT EXISTS users (
+                    id BIGSERIAL PRIMARY KEY,
+                    full_name TEXT NOT NULL,
+                    email TEXT NOT NULL,
+                    password_hash TEXT NOT NULL,
+                    profile_json TEXT NOT NULL DEFAULT '{}',
+                    created_at TEXT NOT NULL
+                )
+            """)
+            connection.execute("""
+                CREATE UNIQUE INDEX IF NOT EXISTS users_email_lower_unique
+                ON users (LOWER(email))
+            """)
+            connection.execute("""
+                CREATE TABLE IF NOT EXISTS user_sessions (
+                    token TEXT PRIMARY KEY,
+                    user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                    created_at TEXT NOT NULL
+                )
+            """)
+            connection.execute("""
+                CREATE TABLE IF NOT EXISTS user_data (
+                    user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                    data_key TEXT NOT NULL,
+                    data_json TEXT NOT NULL,
+                    updated_at TEXT NOT NULL,
+                    PRIMARY KEY (user_id, data_key)
+                )
+            """)
+        else:
+            connection.execute("""
+                CREATE TABLE IF NOT EXISTS users (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    full_name TEXT NOT NULL,
+                    email TEXT NOT NULL UNIQUE COLLATE NOCASE,
+                    password_hash TEXT NOT NULL,
+                    profile_json TEXT NOT NULL DEFAULT '{}',
+                    created_at TEXT NOT NULL
+                )
+            """)
+            connection.execute("""
+                CREATE TABLE IF NOT EXISTS user_sessions (
+                    token TEXT PRIMARY KEY,
+                    user_id INTEGER NOT NULL,
+                    created_at TEXT NOT NULL,
+                    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+                )
+            """)
+            connection.execute("""
+                CREATE TABLE IF NOT EXISTS user_data (
+                    user_id INTEGER NOT NULL,
+                    data_key TEXT NOT NULL,
+                    data_json TEXT NOT NULL,
+                    updated_at TEXT NOT NULL,
+                    PRIMARY KEY (user_id, data_key),
+                    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+                )
+            """)
 
 
 def create_account_session(connection, user_id):
     token = secrets.token_urlsafe(32)
-
     connection.execute(
         """
         INSERT INTO user_sessions (token, user_id, created_at)
         VALUES (?, ?, ?)
         """,
-        (
-            token,
-            user_id,
-            datetime.now(timezone.utc).isoformat()
-        )
+        (token, user_id, datetime.now(timezone.utc).isoformat())
     )
-
     return token
 
 
@@ -162,7 +219,6 @@ def get_authenticated_user():
         return None
 
     token = parts[1].strip()
-
     if not token:
         return None
 
@@ -230,11 +286,7 @@ def register_account():
             "message": "Invalid profile information."
         }), 400
 
-    profile = {
-        **profile,
-        "fullName": full_name,
-        "email": email
-    }
+    profile = {**profile, "fullName": full_name, "email": email}
 
     try:
         with get_account_db() as connection:
@@ -245,6 +297,7 @@ def register_account():
                     profile_json, created_at
                 )
                 VALUES (?, ?, ?, ?, ?)
+                RETURNING id
                 """,
                 (
                     full_name,
@@ -254,8 +307,8 @@ def register_account():
                     datetime.now(timezone.utc).isoformat()
                 )
             )
-
-            user_id = cursor.lastrowid
+            inserted_user = cursor.fetchone()
+            user_id = inserted_user["id"]
             token = create_account_session(connection, user_id)
 
         return jsonify({
@@ -265,7 +318,7 @@ def register_account():
             "profile": profile
         }), 201
 
-    except sqlite3.IntegrityError:
+    except (sqlite3.IntegrityError, psycopg2.IntegrityError):
         return jsonify({
             "status": "error",
             "message": "An account with this email already exists."
@@ -279,7 +332,6 @@ def register_account():
 @app.route("/auth/login", methods=["POST"])
 def login_account():
     payload = request.get_json(silent=True) or {}
-
     email = str(payload.get("email", "")).strip().lower()
     password = payload.get("password", "")
 
@@ -294,24 +346,19 @@ def login_account():
             """
             SELECT id, full_name, email, password_hash, profile_json
             FROM users
-            WHERE email = ?
+            WHERE LOWER(email) = LOWER(?)
             """,
             (email,)
         ).fetchone()
 
-        if not user or not check_password_hash(
-            user["password_hash"], password
-        ):
+        if not user or not check_password_hash(user["password_hash"], password):
             return jsonify({
                 "status": "error",
                 "message": "Incorrect email or password."
             }), 401
 
         token = create_account_session(connection, user["id"])
-
-        profile = __import__("json").loads(
-            user["profile_json"] or "{}"
-        )
+        profile = __import__("json").loads(user["profile_json"] or "{}")
 
     return jsonify({
         "status": "success",
@@ -346,20 +393,15 @@ def get_account_data():
         ).fetchall()
 
     data = {}
-
     for row in rows:
         try:
-            data[row["data_key"]] = __import__("json").loads(
-                row["data_json"]
-            )
+            data[row["data_key"]] = __import__("json").loads(row["data_json"])
         except (ValueError, TypeError):
             continue
 
     return jsonify({
         "status": "success",
-        "profile": __import__("json").loads(
-            user["profile_json"] or "{}"
-        ),
+        "profile": __import__("json").loads(user["profile_json"] or "{}"),
         "data": data
     }), 200
 
