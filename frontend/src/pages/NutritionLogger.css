@@ -175,7 +175,7 @@
 .insight-note span { margin-top:7px; font-family:inherit; }
 
 /* BOTTOM */
-.bottom-wellness-grid { display:grid; grid-template-columns:.1.5fr 1fr; gap:12px; margin-top:12px; align-items: stretch; }
+.bottom-wellness-grid { display:grid; grid-template-columns:1.5fr 1fr; gap:12px; margin-top:12px; align-items: stretch; }
 .hydration-card { position:relative; padding:17px 20px; background:#f3faff; border-color:#d4e9f5; overflow:hidden; }
 .hydration-card h2 { margin:0 0 13px; color:#1670bb; font-size:14px; }
 .hydration-goal p { margin:0 0 1px; color:#54736d; font-size:9px; }
